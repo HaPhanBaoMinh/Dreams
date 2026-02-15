@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 import { ProductCard } from "@/components/product/ProductCard";
-import { products, services, processSteps, testimonials, blogPosts } from "@/lib/data";
+import { products, processSteps, testimonials, blogPosts } from "@/lib/data";
 
 export default function HomePage() {
   const featuredProducts = products.slice(0, 4);
@@ -75,44 +75,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ SERVICES ═══ */}
+      {/* ═══ PRODUCT CATEGORIES ═══ */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            title="Dịch Vụ Của Chúng Tôi"
-            subtitle="Giải pháp toàn diện cho ngày cưới hỏi truyền thống, từ đội bưng quả chuyên nghiệp đến bộ sưu tập áo dài đa dạng."
+            title="Sản Phẩm Của Chúng Tôi"
+            subtitle="Áo dài cao cấp và phụ kiện đồng bộ cho ngày cưới hỏi trọn vẹn."
           />
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
+          <div className="grid gap-6 sm:grid-cols-2">
+            {[
+              {
+                title: "Áo Dài",
+                subtitle: "Cho thuê áo dài cưới",
+                description: "Hơn 1.200 mẫu áo dài từ truyền thống đến cách tân, cho cô dâu, chú rể, đội bê tráp và gia đình.",
+                image: "https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?w=800&h=600&fit=crop",
+                href: "/ao-dai",
+              },
+              {
+                title: "Phụ Kiện",
+                subtitle: "Trang sức & phụ kiện cưới",
+                description: "Mấn đội đầu, khăn vấn, trang sức, giày cưới và các phụ kiện đồng bộ cho ngày trọng đại.",
+                image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop",
+                href: "/phu-kien",
+              },
+            ].map((category) => (
               <Link
-                key={service.slug}
-                href={`/dich-vu/${service.slug}`}
+                key={category.href}
+                href={category.href}
                 className="group relative overflow-hidden rounded-xl aspect-[4/5]"
               >
                 <Image
-                  src={service.image}
-                  alt={service.title}
+                  src={category.image}
+                  alt={category.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <span className="text-xs uppercase tracking-wider text-secondary-300 font-body">
-                    {service.subtitle}
+                    {category.subtitle}
                   </span>
                   <h3 className="mt-1 font-heading text-xl font-semibold text-white">
-                    {service.title}
+                    {category.title}
                   </h3>
                   <p className="mt-2 text-sm text-neutral-300 line-clamp-2 font-body">
-                    {service.description}
+                    {category.description}
                   </p>
-                  <div className="mt-3 flex items-center justify-between">
-                    <span className="text-sm font-semibold text-secondary-300 font-body">
-                      {service.price}
-                    </span>
+                  <div className="mt-3 flex items-center">
                     <span className="text-sm text-white group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                      Tìm hiểu <ArrowRight className="h-3.5 w-3.5" />
+                      Khám phá <ArrowRight className="h-3.5 w-3.5" />
                     </span>
                   </div>
                 </div>
@@ -189,7 +201,7 @@ export default function HomePage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
               <Image
                 src="https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?w=800&h=1000&fit=crop"
-                alt="Dreams brand story"
+                alt="The Fish brand story"
                 fill
                 className="object-cover"
               />
@@ -204,7 +216,7 @@ export default function HomePage() {
               <div className="mt-4 h-px w-16 bg-secondary-500" />
               <div className="mt-6 space-y-4 font-body text-neutral-600 leading-relaxed">
                 <p>
-                  Dreams ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
+                  The Fish ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
                   Việt Nam — nơi mỗi chiếc áo dài, mỗi mâm quả đều mang trong
                   mình câu chuyện về tình yêu, sự kính trọng và lời hứa gắn kết
                   hai gia đình.
@@ -218,7 +230,7 @@ export default function HomePage() {
               </div>
               <Link href="/ve-chung-toi" className="mt-6 inline-block">
                 <Button variant="outline" className="rounded-full">
-                  Đọc thêm về Dreams <ArrowRight className="h-4 w-4" />
+                  Đọc thêm về The Fish <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
             </div>

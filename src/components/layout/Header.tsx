@@ -8,16 +8,13 @@ import { MobileMenu } from "./MobileMenu";
 
 const navLinks = [
   {
-    label: "Dịch vụ",
-    href: "/dich-vu",
+    label: "Sản phẩm",
+    href: "/ao-dai",
     children: [
-      { label: "Bưng quả trọn gói", href: "/dich-vu/bung-qua-tron-goi" },
-      { label: "Cho thuê áo dài", href: "/ao-dai" },
-      { label: "Trọn gói lễ cưới", href: "/dich-vu/tron-goi-le-cuoi" },
+      { label: "Áo dài", href: "/ao-dai" },
+      { label: "Phụ kiện", href: "/phu-kien" },
     ],
   },
-  { label: "Áo dài", href: "/ao-dai" },
-  { label: "Bộ sưu tập", href: "/bo-suu-tap" },
   { label: "Blog", href: "/blog" },
   { label: "Về chúng tôi", href: "/ve-chung-toi" },
   { label: "Liên hệ", href: "/lien-he" },
@@ -37,7 +34,7 @@ export function Header() {
     <>
       {/* Announcement Bar */}
       <div className="bg-primary-500 text-white text-center text-xs sm:text-sm py-2 px-4 font-body">
-        Ưu đãi mùa cưới 2026 — Giảm 15% cho đặt sớm trước 30/04
+        Mùa cưới 2026 — Liên hệ ngay để được tư vấn miễn phí
       </div>
 
       {/* Main Header */}
@@ -63,7 +60,7 @@ export function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
               <span className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900">
-                Dreams
+                The Fish
               </span>
             </Link>
 

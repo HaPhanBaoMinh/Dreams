@@ -39,7 +39,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
           {/* Header */}
           <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4">
             <span className="font-heading text-xl font-bold text-neutral-900">
-              Dreams
+              The Fish
             </span>
             <button
               onClick={onClose}
@@ -89,11 +89,11 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
               0901 234 567
             </a>
             <a
-              href="mailto:hello@dreams.vn"
+              href="mailto:hello@thefish.vn"
               className="flex items-center gap-3 text-sm text-neutral-600 hover:text-primary-500"
             >
               <Mail className="h-4 w-4" />
-              hello@dreams.vn
+              hello@thefish.vn
             </a>
             <div className="flex items-start gap-3 text-sm text-neutral-600">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0" />

@@ -7,9 +7,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { stats, teamMembers } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Về Chúng Tôi — Câu Chuyện Của Dreams",
+  title: "Về Chúng Tôi — Câu Chuyện Của The Fish",
   description:
-    "Dreams ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới Việt Nam. Tìm hiểu câu chuyện, sứ mệnh và đội ngũ của chúng tôi.",
+    "The Fish ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới Việt Nam. Tìm hiểu câu chuyện, sứ mệnh và đội ngũ của chúng tôi.",
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
       <div className="relative h-[50vh] min-h-[350px] overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&h=800&fit=crop"
-          alt="Dreams team"
+                alt="The Fish team"
           fill
           priority
           className="object-cover"
@@ -27,7 +27,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex h-full items-center justify-center text-center">
           <h1 className="font-heading text-h1 font-bold text-white">
-            Câu Chuyện Của Dreams
+            Câu Chuyện Của The Fish
           </h1>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default function AboutPage() {
           <div className="mt-2 h-px w-16 bg-secondary-500 mx-auto" />
           <div className="mt-8 space-y-5 font-body text-neutral-600 leading-relaxed text-base">
             <p>
-              Dreams ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
+              The Fish ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
               Việt Nam — nơi mỗi chiếc áo dài, mỗi mâm quả đều mang trong
               mình câu chuyện về tình yêu, sự kính trọng và lời hứa gắn kết
               hai gia đình.
@@ -55,7 +55,7 @@ export default function AboutPage() {
             </p>
             <p>
               Với hơn 5 năm kinh nghiệm và hơn 500 lễ cưới đã đồng hành,
-              Dreams không ngừng nâng cao chất lượng dịch vụ — từ đào tạo
+              The Fish không ngừng nâng cao chất lượng dịch vụ — từ đào tạo
               đội bưng quả chuyên nghiệp, mở rộng bộ sưu tập áo dài, đến
               tư vấn nghi lễ tận tâm — để mỗi ngày trọng đại đều trọn vẹn
               và đáng nhớ.
@@ -71,7 +71,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
               <Image
                 src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=800&h=1000&fit=crop"
-                alt="Sứ mệnh của Dreams"
+                alt="Sứ mệnh của The Fish"
                 fill
                 className="object-cover"
               />
@@ -86,7 +86,7 @@ export default function AboutPage() {
               <div className="mt-4 h-px w-16 bg-secondary-500" />
               <div className="mt-6 space-y-4 font-body text-neutral-600 leading-relaxed">
                 <p>
-                  Sứ mệnh của Dreams là mang đến trải nghiệm lễ cưới truyền
+                  Sứ mệnh của The Fish là mang đến trải nghiệm lễ cưới truyền
                   thống trọn vẹn — nơi mà mỗi chi tiết được chăm chút bằng
                   sự am hiểu văn hóa sâu sắc và thẩm mỹ tinh tế.
                 </p>
@@ -214,7 +214,7 @@ export default function AboutPage() {
             Sẵn Sàng Cho Ngày Trọng Đại?
           </h2>
           <p className="mt-3 font-body text-neutral-500">
-            Hãy để Dreams đồng hành cùng bạn. Liên hệ ngay để nhận tư vấn miễn phí.
+            Hãy để The Fish đồng hành cùng bạn. Liên hệ ngay để nhận tư vấn miễn phí.
           </p>
           <div className="mt-6 flex justify-center gap-3">
             <Link href="/lien-he">

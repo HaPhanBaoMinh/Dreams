@@ -3,21 +3,18 @@ import { MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 
 const footerLinks = {
-  services: {
-    title: "Dịch vụ",
+  products: {
+    title: "Sản phẩm",
     links: [
-      { label: "Bưng quả trọn gói", href: "/dich-vu/bung-qua-tron-goi" },
-      { label: "Áo dài cưới", href: "/ao-dai" },
-      { label: "Áo dài bê tráp", href: "/ao-dai" },
-      { label: "Trọn gói lễ cưới", href: "/dich-vu/tron-goi-le-cuoi" },
+      { label: "Áo dài", href: "/ao-dai" },
+      { label: "Phụ kiện", href: "/phu-kien" },
     ],
   },
-  explore: {
-    title: "Khám phá",
+  about: {
+    title: "Về The Fish",
     links: [
+      { label: "Câu chuyện thương hiệu", href: "/ve-chung-toi" },
       { label: "Blog", href: "/blog" },
-      { label: "Bộ sưu tập", href: "/bo-suu-tap" },
-      { label: "Thư viện ảnh", href: "/thu-vien-anh" },
     ],
   },
   support: {
@@ -41,7 +38,7 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">
               <span className="font-heading text-2xl font-bold text-white">
-                Dreams
+                The Fish
               </span>
             </Link>
             <p className="mt-2 text-sm italic text-secondary-500 font-body">
@@ -60,8 +57,8 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-neutral-400" />
-                <a href="mailto:hello@dreams.vn" className="hover:text-white transition-colors">
-                  hello@dreams.vn
+                <a href="mailto:hello@thefish.vn" className="hover:text-white transition-colors">
+                  hello@thefish.vn
                 </a>
               </div>
             </div>
@@ -75,7 +72,7 @@ export function Footer() {
               </h3>
               <ul className="mt-4 space-y-2.5">
                 {section.links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.label}>
                     <Link
                       href={link.href}
                       className="text-sm text-neutral-400 hover:text-white transition-colors"
@@ -127,7 +124,7 @@ export function Footer() {
       {/* Copyright */}
       <div className="border-t border-neutral-800 py-4">
         <p className="text-center text-xs text-neutral-500 font-body">
-          &copy; 2026 Dreams. All rights reserved.
+          &copy; 2026 The Fish. All rights reserved.
         </p>
       </div>
     </footer>

@@ -308,7 +308,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Chị Nguyễn Thị Minh Anh",
     location: "Q.7, TP. Hồ Chí Minh",
-    quote: "Đội bưng quả rất chuyên nghiệp và đẹp đôi. Áo dài được giặt ủi sạch sẽ, giao đúng hẹn. Gia đình hai bên đều rất hài lòng với dịch vụ của Dreams.",
+    quote: "Đội bưng quả rất chuyên nghiệp và đẹp đôi. Áo dài được giặt ủi sạch sẽ, giao đúng hẹn. Gia đình hai bên đều rất hài lòng với dịch vụ của The Fish.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
   },

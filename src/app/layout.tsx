@@ -19,13 +19,13 @@ const beVietnam = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dreams.vn"),
+  metadataBase: new URL("https://thefish.vn"),
   title: {
-    default: "Dreams — Dịch Vụ Bưng Quả & Cho Thuê Áo Dài Cưới",
-    template: "%s | Dreams",
+    default: "The Fish — Dịch Vụ Bưng Quả & Cho Thuê Áo Dài Cưới",
+    template: "%s | The Fish",
   },
   description:
-    "Dreams cung cấp dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới cao cấp tại TP. Hồ Chí Minh. Nâng niu trọn vẹn ngày trọng đại của bạn.",
+    "The Fish cung cấp dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới cao cấp tại TP. Hồ Chí Minh. Nâng niu trọn vẹn ngày trọng đại của bạn.",
   keywords: [
     "bưng quả",
     "cho thuê áo dài",
@@ -35,11 +35,12 @@ export const metadata: Metadata = {
     "bê tráp",
     "áo dài bê tráp",
     "thuê áo dài TPHCM",
+    "phụ kiện cưới",
   ],
   openGraph: {
     type: "website",
     locale: "vi_VN",
-    siteName: "Dreams",
+    siteName: "The Fish",
   },
 };
 

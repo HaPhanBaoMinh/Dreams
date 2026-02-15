@@ -7,7 +7,7 @@ import { ContactForm } from "./ContactForm";
 export const metadata: Metadata = {
   title: "Liên Hệ — Đặt Lịch Tư Vấn Miễn Phí",
   description:
-    "Liên hệ Dreams để nhận tư vấn miễn phí về dịch vụ bưng quả và cho thuê áo dài cưới. Showroom tại Quận 1, TP. Hồ Chí Minh.",
+    "Liên hệ The Fish để nhận tư vấn miễn phí về dịch vụ bưng quả và cho thuê áo dài cưới. Showroom tại Quận 1, TP. Hồ Chí Minh.",
 };
 
 export default function ContactPage() {
@@ -71,10 +71,10 @@ export default function ContactPage() {
                       Email
                     </p>
                     <a
-                      href="mailto:hello@dreams.vn"
+                      href="mailto:hello@thefish.vn"
                       className="text-sm text-primary-500 hover:underline font-body"
                     >
-                      hello@dreams.vn
+                      hello@thefish.vn
                     </a>
                   </div>
                 </div>
