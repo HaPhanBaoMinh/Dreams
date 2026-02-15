@@ -20,7 +20,7 @@ export default function AboutPage() {
             Về The Fish
           </p>
           <h1 className="font-heading text-h1 text-neutral-900">
-            Câu Chuyện Của Chúng Tôi
+            Câu Chuyện 
           </h1>
         </div>
       </section>
