@@ -58,11 +58,14 @@
 
 /* ── Base Styles ── */
 
+html {
+  font-size: 112.5%; /* 18px base — scales all rem values up proportionally */
+}
+
 body {
   background-color: var(--color-neutral-50);
   color: var(--color-neutral-600);
   font-family: var(--font-body);
-  font-size: 1rem;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
