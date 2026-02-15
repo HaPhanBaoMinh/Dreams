@@ -100,8 +100,9 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-neutral-900);
 }
 
-/* ── Smooth transitions ── */
+/* ── Smooth scroll — only for anchor links, not programmatic navigation ── */
 
-* {
+html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* offset for sticky header */
 }
