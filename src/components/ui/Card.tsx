@@ -6,7 +6,7 @@ const Card = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
     <div
       ref={ref}
       className={cn(
-        "overflow-hidden rounded-lg border border-neutral-200 bg-white transition-shadow duration-200 hover:shadow-lg",
+        "overflow-hidden bg-white transition-all duration-300",
         className
       )}
       {...props}
@@ -21,7 +21,7 @@ const CardImage = forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("relative aspect-[2/3] overflow-hidden", className)}
+    className={cn("relative aspect-[3/4] overflow-hidden bg-neutral-100", className)}
     {...props}
   />
 ));
@@ -31,7 +31,7 @@ const CardContent = forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-4", className)} {...props} />
+  <div ref={ref} className={cn("pt-4", className)} {...props} />
 ));
 CardContent.displayName = "CardContent";
 

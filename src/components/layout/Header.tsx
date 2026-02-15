@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Search } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./MobileMenu";
 
@@ -32,56 +32,43 @@ export function Header() {
 
   return (
     <>
-      {/* Announcement Bar */}
-      <div className="bg-primary-500 text-white text-center text-xs sm:text-sm py-2 px-4 font-body">
-        Mùa cưới 2026 — Liên hệ ngay để được tư vấn miễn phí
-      </div>
-
-      {/* Main Header */}
       <header
         className={cn(
-          "sticky top-0 z-50 transition-all duration-300 border-b",
+          "sticky top-0 z-50 transition-all duration-500",
           isScrolled
-            ? "bg-white/95 backdrop-blur-md border-neutral-200 shadow-sm"
-            : "bg-white border-transparent"
+            ? "bg-white/95 backdrop-blur-md border-b border-neutral-200"
+            : "bg-transparent border-b border-transparent"
         )}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between lg:h-20">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="flex h-20 items-center justify-between lg:h-24">
             {/* Mobile menu button */}
             <button
-              className="lg:hidden text-neutral-700 hover:text-primary-500 transition-colors"
+              className="lg:hidden text-neutral-700 hover:text-neutral-900 transition-colors"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Mở menu"
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-5 w-5" strokeWidth={1.5} />
             </button>
 
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <span className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900">
-                The Fish
-              </span>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
+            {/* Desktop Navigation — Left */}
+            <nav className="hidden lg:flex items-center gap-10">
+              {navLinks.slice(0, 2).map((link) => (
                 <div key={link.href} className="relative group">
                   <Link
                     href={link.href}
-                    className="text-sm font-body text-neutral-600 hover:text-primary-500 transition-colors py-2"
+                    className="text-[13px] uppercase tracking-[0.12em] font-body text-neutral-500 hover:text-neutral-900 transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
                   {link.children && (
-                    <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                      <div className="bg-white border border-neutral-200 rounded-lg shadow-xl py-2 min-w-[220px]">
+                    <div className="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                      <div className="bg-white border border-neutral-200 py-3 min-w-[200px]">
                         {link.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block px-4 py-2.5 text-sm text-neutral-600 hover:text-primary-500 hover:bg-neutral-50 transition-colors"
+                            className="block px-6 py-2.5 text-[13px] text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50 transition-colors"
                           >
                             {child.label}
                           </Link>
@@ -93,22 +80,28 @@ export function Header() {
               ))}
             </nav>
 
-            {/* Right actions */}
-            <div className="flex items-center gap-3">
-              <button
-                className="text-neutral-500 hover:text-primary-500 transition-colors"
-                aria-label="Tìm kiếm"
-              >
-                <Search className="h-5 w-5" />
-              </button>
-              <a
-                href="tel:0901234567"
-                className="hidden sm:flex items-center gap-2 rounded-full bg-primary-500 px-4 py-2 text-sm font-medium text-white hover:bg-primary-600 transition-colors"
-              >
-                <Phone className="h-4 w-4" />
-                <span>0901 234 567</span>
-              </a>
-            </div>
+            {/* Logo — Center */}
+            <Link href="/" className="flex items-center">
+              <span className="font-heading text-2xl sm:text-3xl tracking-tight text-neutral-900">
+                The Fish
+              </span>
+            </Link>
+
+            {/* Desktop Navigation — Right */}
+            <nav className="hidden lg:flex items-center gap-10">
+              {navLinks.slice(2).map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-[13px] uppercase tracking-[0.12em] font-body text-neutral-500 hover:text-neutral-900 transition-colors duration-300"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Mobile spacer for centering logo */}
+            <div className="w-5 lg:hidden" />
           </div>
         </div>
       </header>

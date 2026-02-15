@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Be_Vietnam_Pro } from "next/font/google";
+import { Playfair_Display, DM_Sans } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ["vietnamese", "latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-cormorant",
+  variable: "--font-playfair",
   display: "swap",
 });
 
-const beVietnam = Be_Vietnam_Pro({
-  subsets: ["vietnamese", "latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-be-vietnam",
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${cormorant.variable} ${beVietnam.variable}`}>
+    <html lang="vi" className={`${playfair.variable} ${dmSans.variable}`}>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

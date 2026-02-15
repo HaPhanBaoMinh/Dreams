@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { stats, teamMembers } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -16,30 +14,39 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <div className="relative h-[50vh] min-h-[350px] overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&h=800&fit=crop"
-                alt="The Fish team"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 flex h-full items-center justify-center text-center">
-          <h1 className="font-heading text-h1 font-bold text-white">
-            Câu Chuyện Của The Fish
+      <section className="py-24 lg:py-36 text-center">
+        <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
+          <p className="text-[11px] uppercase tracking-[0.2em] text-secondary-500 font-body mb-6">
+            Về The Fish
+          </p>
+          <h1 className="font-heading text-h1 text-neutral-900">
+            Câu Chuyện Của Chúng Tôi
           </h1>
         </div>
-      </div>
+      </section>
+
+      {/* Editorial frame */}
+      <section className="pb-24 lg:pb-32">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="aspect-[16/7] bg-neutral-100 flex items-center justify-center">
+            <div className="text-center">
+              <div className="w-16 h-px bg-neutral-300 mx-auto mb-4" />
+              <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 font-body">
+                The Fish — Câu chuyện
+              </p>
+              <div className="w-16 h-px bg-neutral-300 mx-auto mt-4" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Letter */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body">
+      <section className="py-24 lg:py-32 border-t border-neutral-200">
+        <div className="mx-auto max-w-2xl px-6 sm:px-8 lg:px-12 text-center">
+          <p className="text-[11px] uppercase tracking-[0.2em] text-secondary-500 font-body mb-8">
             Thư gửi bạn
-          </span>
-          <div className="mt-2 h-px w-16 bg-secondary-500 mx-auto" />
-          <div className="mt-8 space-y-5 font-body text-neutral-600 leading-relaxed text-base">
+          </p>
+          <div className="space-y-6 font-body text-neutral-500 leading-relaxed text-base">
             <p>
               The Fish ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
               Việt Nam — nơi mỗi chiếc áo dài, mỗi mâm quả đều mang trong
@@ -55,36 +62,36 @@ export default function AboutPage() {
             </p>
             <p>
               Với hơn 5 năm kinh nghiệm và hơn 500 lễ cưới đã đồng hành,
-              The Fish không ngừng nâng cao chất lượng dịch vụ — từ đào tạo
-              đội bưng quả chuyên nghiệp, mở rộng bộ sưu tập áo dài, đến
-              tư vấn nghi lễ tận tâm — để mỗi ngày trọng đại đều trọn vẹn
-              và đáng nhớ.
+              The Fish không ngừng nâng cao chất lượng dịch vụ — để mỗi ngày
+              trọng đại đều trọn vẹn và đáng nhớ.
             </p>
           </div>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-16 lg:py-24 bg-neutral-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
-              <Image
-                src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=800&h=1000&fit=crop"
-                alt="Sứ mệnh của The Fish"
-                fill
-                className="object-cover"
-              />
+      <section className="py-24 lg:py-32 border-t border-neutral-200 bg-neutral-100">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="grid gap-16 lg:grid-cols-2 items-center">
+            {/* White frame */}
+            <div className="aspect-[4/5] bg-white flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
+                <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 font-body">
+                  Sứ mệnh
+                </span>
+                <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
+              </div>
             </div>
-            <div>
-              <span className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body">
+            <div className="lg:pl-8">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-secondary-500 font-body">
                 Sứ mệnh
-              </span>
-              <h2 className="mt-3 font-heading text-h2 font-semibold text-neutral-900">
-                Nâng Niu Trọn Vẹn Ngày Trọng Đại
+              </p>
+              <h2 className="mt-4 font-heading text-h2 text-neutral-900">
+                Nâng Niu Trọn Vẹn
+                <br />Ngày Trọng Đại
               </h2>
-              <div className="mt-4 h-px w-16 bg-secondary-500" />
-              <div className="mt-6 space-y-4 font-body text-neutral-600 leading-relaxed">
+              <div className="mt-8 space-y-5 font-body text-neutral-500 leading-relaxed">
                 <p>
                   Sứ mệnh của The Fish là mang đến trải nghiệm lễ cưới truyền
                   thống trọn vẹn — nơi mà mỗi chi tiết được chăm chút bằng
@@ -93,8 +100,7 @@ export default function AboutPage() {
                 <p>
                   Chúng tôi không chỉ cung cấp dịch vụ — chúng tôi đồng hành
                   cùng bạn và gia đình, từ khâu tư vấn chọn áo dài, sắp xếp
-                  mâm quả, đến từng bước trong nghi lễ đám hỏi. Để bạn an
-                  tâm tận hưởng, và gia đình hai bên đều tự hào.
+                  mâm quả, đến từng bước trong nghi lễ đám hỏi.
                 </p>
               </div>
             </div>
@@ -103,39 +109,38 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <span className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body">
+      <section className="py-24 lg:py-32 border-t border-neutral-200">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="grid gap-16 lg:grid-cols-2 items-center">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.2em] text-secondary-500 font-body">
                 Giá trị cốt lõi
-              </span>
-              <h2 className="mt-3 font-heading text-h2 font-semibold text-neutral-900">
+              </p>
+              <h2 className="mt-4 font-heading text-h2 text-neutral-900">
                 Truyền Thống — Tận Tâm — Tinh Tế
               </h2>
-              <div className="mt-4 h-px w-16 bg-secondary-500" />
-              <div className="mt-6 space-y-4">
+              <div className="mt-8 space-y-6">
                 {[
                   {
                     title: "Truyền thống",
-                    desc: "Am hiểu sâu sắc phong tục cưới hỏi ba miền. Mỗi nghi lễ được thực hiện đúng theo truyền thống, tôn trọng giá trị văn hóa.",
+                    desc: "Am hiểu sâu sắc phong tục cưới hỏi ba miền. Mỗi nghi lễ được thực hiện đúng theo truyền thống.",
                   },
                   {
                     title: "Tận tâm",
-                    desc: "Từ cuộc gọi tư vấn đầu tiên đến khoảnh khắc cuối cùng của buổi lễ, chúng tôi luôn đồng hành và chu đáo trong từng chi tiết.",
+                    desc: "Từ cuộc gọi tư vấn đầu tiên đến khoảnh khắc cuối cùng, chúng tôi luôn đồng hành trong từng chi tiết.",
                   },
                   {
                     title: "Tinh tế",
-                    desc: "Áo dài được chọn lựa kỹ càng, mâm quả sắp xếp nghệ thuật, đội bưng quả đẹp đôi — mọi thứ đều hướng đến sự hoàn hảo.",
+                    desc: "Áo dài được chọn lựa kỹ càng, mâm quả sắp xếp nghệ thuật — mọi thứ đều hướng đến sự hoàn hảo.",
                   },
                 ].map((value) => (
-                  <div key={value.title} className="flex gap-4">
-                    <div className="h-2 w-2 rounded-full bg-primary-500 mt-2 shrink-0" />
+                  <div key={value.title} className="flex gap-5">
+                    <div className="w-px bg-secondary-400 shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-body text-sm font-semibold text-neutral-900">
+                      <h3 className="font-body text-sm font-medium text-neutral-900">
                         {value.title}
                       </h3>
-                      <p className="mt-1 font-body text-sm text-neutral-500 leading-relaxed">
+                      <p className="mt-1.5 font-body text-sm text-neutral-500 leading-relaxed">
                         {value.desc}
                       </p>
                     </div>
@@ -143,28 +148,30 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-xl order-1 lg:order-2">
-              <Image
-                src="https://images.unsplash.com/photo-1590735213920-68192a487bc2?w=800&h=1000&fit=crop"
-                alt="Giá trị cốt lõi"
-                fill
-                className="object-cover"
-              />
+            {/* White frame */}
+            <div className="aspect-[4/5] bg-neutral-100 flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
+                <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 font-body">
+                  Giá trị
+                </span>
+                <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-primary-500">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-20 border-t border-neutral-200 bg-neutral-900">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="font-heading text-4xl font-bold text-white">
+                <p className="font-heading text-4xl text-white">
                   {stat.value}
                 </p>
-                <p className="mt-1 font-body text-sm text-primary-200">
+                <p className="mt-2 font-body text-sm text-neutral-500">
                   {stat.label}
                 </p>
               </div>
@@ -174,31 +181,29 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Đội Ngũ Của Chúng Tôi"
-            subtitle="Những con người tâm huyết đứng sau mỗi ngày trọng đại."
+      <section className="py-24 lg:py-32 border-t border-neutral-200">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <SectionHeadingInline
+            label="Đội ngũ"
+            title="Những Con Người Đứng Sau Mỗi Ngày Trọng Đại"
           />
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 mt-16">
             {teamMembers.map((member) => (
-              <div key={member.name} className="text-center group">
-                <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-full">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+              <div key={member.name} className="text-center">
+                {/* Avatar placeholder */}
+                <div className="mx-auto h-48 w-48 bg-neutral-100 rounded-full flex items-center justify-center">
+                  <span className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body">
+                    Ảnh
+                  </span>
                 </div>
-                <h3 className="mt-4 font-heading text-lg font-semibold text-neutral-900">
+                <h3 className="mt-6 font-heading text-lg text-neutral-900">
                   {member.name}
                 </h3>
-                <p className="text-sm text-primary-500 font-body">
+                <p className="text-sm text-secondary-500 font-body mt-1">
                   {member.role}
                 </p>
-                <p className="mt-2 text-sm text-neutral-500 font-body max-w-xs mx-auto leading-relaxed">
+                <p className="mt-3 text-sm text-neutral-500 font-body max-w-xs mx-auto leading-relaxed">
                   {member.bio}
                 </p>
               </div>
@@ -208,22 +213,22 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-neutral-100">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-h2 font-semibold text-neutral-900">
+      <section className="py-24 lg:py-32 border-t border-neutral-200 bg-neutral-100">
+        <div className="mx-auto max-w-2xl px-6 sm:px-8 lg:px-12 text-center">
+          <h2 className="font-heading text-h2 text-neutral-900">
             Sẵn Sàng Cho Ngày Trọng Đại?
           </h2>
-          <p className="mt-3 font-body text-neutral-500">
-            Hãy để The Fish đồng hành cùng bạn. Liên hệ ngay để nhận tư vấn miễn phí.
+          <p className="mt-4 font-body text-neutral-500">
+            Hãy để The Fish đồng hành cùng bạn.
           </p>
-          <div className="mt-6 flex justify-center gap-3">
+          <div className="mt-8 flex justify-center gap-4">
             <Link href="/lien-he">
-              <Button size="lg" className="rounded-full">
-                Liên hệ tư vấn <ArrowRight className="h-4 w-4" />
+              <Button size="lg">
+                Liên hệ tư vấn
               </Button>
             </Link>
             <Link href="/ao-dai">
-              <Button variant="secondary" size="lg" className="rounded-full">
+              <Button variant="outline" size="lg">
                 Xem áo dài
               </Button>
             </Link>
@@ -231,5 +236,16 @@ export default function AboutPage() {
         </div>
       </section>
     </>
+  );
+}
+
+function SectionHeadingInline({ label, title }: { label: string; title: string }) {
+  return (
+    <div className="text-center">
+      <p className="text-[11px] uppercase tracking-[0.2em] text-secondary-500 font-body mb-4">
+        {label}
+      </p>
+      <h2 className="font-heading text-h2 text-neutral-900">{title}</h2>
+    </div>
   );
 }

@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ContactForm } from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -12,135 +10,75 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
       <Breadcrumb items={[{ label: "Liên hệ" }]} />
 
-      <div className="pb-16 lg:pb-24">
-        <SectionHeading
-          title="Liên Hệ Với Chúng Tôi"
-          subtitle="Chúng tôi luôn sẵn sàng lắng nghe và tư vấn cho ngày trọng đại của bạn."
-        />
+      <div className="pb-24 lg:pb-32">
+        {/* Hero */}
+        <div className="text-center mb-16 lg:mb-20">
+          <h1 className="font-heading text-h1 text-neutral-900">
+            Liên Hệ
+          </h1>
+          <p className="mt-4 font-body text-neutral-500 max-w-md mx-auto">
+            Chúng tôi luôn sẵn sàng lắng nghe và tư vấn cho ngày trọng đại.
+          </p>
+        </div>
 
-        <div className="grid gap-8 lg:grid-cols-5">
+        <div className="grid gap-16 lg:grid-cols-2">
           {/* Contact Form */}
-          <div className="lg:col-span-3 rounded-xl border border-neutral-200 bg-white p-6 sm:p-8">
-            <h2 className="font-heading text-xl font-semibold text-neutral-900 mb-6">
+          <div>
+            <h2 className="font-heading text-xl text-neutral-900 mb-8">
               Gửi yêu cầu tư vấn
             </h2>
             <ContactForm />
           </div>
 
           {/* Contact Information */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="rounded-xl border border-neutral-200 bg-white p-6">
-              <h3 className="font-heading text-lg font-semibold text-neutral-900 mb-4">
-                Thông tin liên hệ
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-primary-500 mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-sm font-semibold text-neutral-900 font-body">
-                      Địa chỉ Showroom
-                    </p>
-                    <p className="text-sm text-neutral-500 font-body">
-                      123 Đường ABC, Phường XYZ
-                      <br />
-                      Quận 1, TP. Hồ Chí Minh
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Phone className="h-5 w-5 text-primary-500 mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-sm font-semibold text-neutral-900 font-body">
-                      Điện thoại
-                    </p>
-                    <a
-                      href="tel:0901234567"
-                      className="text-sm text-primary-500 hover:underline font-body"
-                    >
-                      0901 234 567
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Mail className="h-5 w-5 text-primary-500 mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-sm font-semibold text-neutral-900 font-body">
-                      Email
-                    </p>
-                    <a
-                      href="mailto:hello@thefish.vn"
-                      className="text-sm text-primary-500 hover:underline font-body"
-                    >
-                      hello@thefish.vn
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Clock className="h-5 w-5 text-primary-500 mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-sm font-semibold text-neutral-900 font-body">
-                      Giờ làm việc
-                    </p>
-                    <p className="text-sm text-neutral-500 font-body">
-                      Thứ 2 – Thứ 7: 9:00 – 19:00
-                      <br />
-                      Chủ nhật: 9:00 – 17:00
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="lg:pl-12">
+            <h2 className="font-heading text-xl text-neutral-900 mb-8">
+              Thông tin
+            </h2>
 
-            <div className="rounded-xl border border-neutral-200 bg-white p-6">
-              <h3 className="font-heading text-lg font-semibold text-neutral-900 mb-4">
-                Kết nối với chúng tôi
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { icon: Facebook, label: "Facebook", href: "#" },
-                  { icon: Instagram, label: "Instagram", href: "#" },
-                ].map(({ icon: Icon, label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    className="flex items-center gap-2 rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-600 hover:border-primary-500 hover:text-primary-500 transition-colors font-body"
-                  >
-                    <Icon className="h-4 w-4" />
-                    {label}
-                  </a>
-                ))}
-                <a
-                  href="#"
-                  className="flex items-center gap-2 rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-600 hover:border-primary-500 hover:text-primary-500 transition-colors font-body"
-                >
-                  <span className="text-xs font-bold border border-current rounded px-1">Zalo</span>
-                  Zalo
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-2 rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-600 hover:border-primary-500 hover:text-primary-500 transition-colors font-body"
-                >
-                  <span className="text-xs font-bold">TT</span>
-                  TikTok
-                </a>
-              </div>
+            <div className="space-y-8">
+              {[
+                {
+                  label: "Địa chỉ",
+                  value: "123 Đường ABC, Phường XYZ\nQuận 1, TP. Hồ Chí Minh",
+                },
+                {
+                  label: "Điện thoại",
+                  value: "0901 234 567",
+                  href: "tel:0901234567",
+                },
+                {
+                  label: "Email",
+                  value: "hello@thefish.vn",
+                  href: "mailto:hello@thefish.vn",
+                },
+                {
+                  label: "Giờ làm việc",
+                  value: "Thứ 2 – Thứ 7: 9:00 – 19:00\nChủ nhật: 9:00 – 17:00",
+                },
+              ].map((item) => (
+                <div key={item.label} className="border-b border-neutral-200 pb-6">
+                  <p className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body mb-2">
+                    {item.label}
+                  </p>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="text-sm text-neutral-900 font-body hover:text-secondary-600 transition-colors"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="text-sm text-neutral-900 font-body whitespace-pre-line">
+                      {item.value}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
-
-        {/* Map */}
-        <div className="mt-12 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100 h-[350px] flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="h-8 w-8 text-neutral-300 mx-auto mb-2" />
-            <p className="text-sm text-neutral-400 font-body">
-              Google Maps sẽ được nhúng ở đây
-            </p>
-            <p className="text-xs text-neutral-300 font-body mt-1">
-              123 Đường ABC, Q.1, TP. Hồ Chí Minh
-            </p>
           </div>
         </div>
       </div>

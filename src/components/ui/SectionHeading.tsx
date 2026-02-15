@@ -16,25 +16,22 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        "mb-10",
+        "mb-16",
         align === "center" && "text-center",
         className
       )}
     >
-      <h2 className="text-h2 font-heading font-semibold tracking-tight text-neutral-900">
+      <h2 className="text-h2 font-heading tracking-tight text-neutral-900">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-3 max-w-2xl text-base text-neutral-500 mx-auto">
+        <p className={cn(
+          "mt-4 max-w-xl text-base text-neutral-500 font-body leading-relaxed",
+          align === "center" && "mx-auto"
+        )}>
           {subtitle}
         </p>
       )}
-      <div
-        className={cn(
-          "mt-4 h-px w-16 bg-secondary-500",
-          align === "center" && "mx-auto"
-        )}
-      />
     </div>
   );
 }

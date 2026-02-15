@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, CalendarDays, Clock, Tag } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { blogPosts } from "@/lib/data";
@@ -32,7 +31,7 @@ export default async function BlogPostPage({ params }: Props) {
   const related = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
       <Breadcrumb
         items={[
           { label: "Blog", href: "/blog" },
@@ -40,143 +39,111 @@ export default async function BlogPostPage({ params }: Props) {
         ]}
       />
 
-      <article className="mx-auto max-w-3xl pb-16 lg:pb-24">
+      <article className="mx-auto max-w-2xl pb-16 lg:pb-24">
         {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center gap-3 text-sm text-neutral-400 font-body mb-4">
-            <span className="inline-flex items-center gap-1.5">
-              <Tag className="h-3.5 w-3.5" />
-              <span className="text-primary-500 font-medium">{post.category}</span>
-            </span>
-            <span>&middot;</span>
-            <span className="inline-flex items-center gap-1.5">
-              <CalendarDays className="h-3.5 w-3.5" />
-              {post.date}
-            </span>
-            <span>&middot;</span>
-            <span className="inline-flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5" />
-              {post.readTime}
-            </span>
+        <div className="mb-12">
+          <div className="flex items-center gap-3 text-[11px] text-neutral-400 font-body uppercase tracking-wider mb-6">
+            <span>{post.category}</span>
+            <span className="w-4 h-px bg-neutral-300" />
+            <span>{post.date}</span>
+            <span className="w-4 h-px bg-neutral-300" />
+            <span>{post.readTime}</span>
           </div>
-          <h1 className="font-heading text-h1 font-bold text-neutral-900 leading-tight">
+          <h1 className="font-heading text-h1 text-neutral-900 leading-tight">
             {post.title}
           </h1>
-          <p className="mt-4 font-body text-lg text-neutral-500 leading-relaxed">
+          <p className="mt-6 font-body text-lg text-neutral-500 leading-relaxed">
             {post.excerpt}
           </p>
         </div>
 
-        {/* Featured Image */}
-        <div className="relative aspect-[2/1] overflow-hidden rounded-xl mb-10">
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            priority
-            className="object-cover"
-          />
+        {/* Featured frame */}
+        <div className="aspect-[2/1] bg-neutral-100 flex items-center justify-center mb-12">
+          <span className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body">
+            {post.category}
+          </span>
         </div>
 
-        {/* Article Body (placeholder) */}
-        <div className="prose prose-neutral max-w-none font-body prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary-500 prose-a:no-underline hover:prose-a:underline">
+        {/* Article Body */}
+        <div className="prose prose-neutral max-w-none font-body prose-headings:font-heading prose-headings:font-normal prose-headings:tracking-tight prose-a:text-neutral-900 prose-a:underline-offset-4">
           <p>
             Trong văn hóa cưới hỏi Việt Nam, mỗi nghi lễ đều mang trong mình
             những ý nghĩa sâu sắc về tình yêu, lòng hiếu thảo và sự kết nối
-            giữa hai gia đình. Bài viết này sẽ giúp bạn hiểu rõ hơn về những
-            giá trị truyền thống quý báu ấy.
+            giữa hai gia đình.
           </p>
 
           <h2>Ý Nghĩa Của Truyền Thống</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            ad minim veniam, quis nostrud exercitation ullamco laboris.
           </p>
           <p>
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Sed ut perspiciatis
-            unde omnis iste natus error sit voluptatem accusantium doloremque
-            laudantium, totam rem aperiam.
+            officia deserunt mollit anim id est laborum.
           </p>
 
           <h2>Những Điều Cần Lưu Ý</h2>
           <p>
             Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-            aut fugit, sed quia consequuntur magni dolores eos qui ratione
-            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-            ipsum quia dolor sit amet, consectetur, adipisci velit.
+            aut fugit, sed quia consequuntur magni dolores eos.
           </p>
           <ul>
             <li>
-              Chọn số mâm quả phù hợp với phong tục vùng miền (thường là số
-              lẻ: 5, 7, 9, 11 mâm).
+              Chọn số mâm quả phù hợp với phong tục vùng miền.
             </li>
             <li>
-              Áo dài cho đội bê tráp nên đồng bộ về màu sắc và phong cách
-              để tạo ấn tượng trang trọng.
+              Áo dài cho đội bê tráp nên đồng bộ về màu sắc.
             </li>
             <li>
-              Thời gian chuẩn bị tối thiểu nên là 2-3 tháng trước ngày lễ
-              để có đủ thời gian chọn đồ và thử áo.
+              Chuẩn bị tối thiểu 2-3 tháng trước ngày lễ.
             </li>
           </ul>
 
           <h2>Lời Kết</h2>
           <p>
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga.
+            blanditiis praesentium voluptatum deleniti atque corrupti.
           </p>
         </div>
 
         {/* Back link */}
-        <div className="mt-10 pt-8 border-t border-neutral-200">
+        <div className="mt-12 pt-8 border-t border-neutral-200">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary-500 hover:text-primary-600 transition-colors font-body"
+            className="inline-flex items-center gap-2 text-[13px] font-body text-neutral-500 hover:text-neutral-900 transition-colors"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft className="h-3.5 w-3.5" />
             Quay lại Blog
           </Link>
         </div>
       </article>
 
       {/* Related Posts */}
-      <div className="border-t border-neutral-200 py-12 lg:py-16">
-        <h2 className="font-heading text-h2 font-semibold text-neutral-900 mb-8">
+      <div className="border-t border-neutral-200 py-16 lg:py-20">
+        <h2 className="font-heading text-h2 text-neutral-900 mb-12">
           Bài Viết Liên Quan
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((p) => (
             <Link
               key={p.slug}
               href={`/blog/${p.slug}`}
-              className="group overflow-hidden rounded-xl border border-neutral-200 bg-white hover:shadow-lg transition-shadow duration-300"
+              className="group block"
             >
-              <div className="relative aspect-[3/2] overflow-hidden">
-                <Image
-                  src={p.image}
-                  alt={p.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="aspect-[3/2] bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150">
+                <span className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body">
+                  {p.category}
+                </span>
               </div>
-              <div className="p-5">
-                <div className="flex items-center gap-2 text-xs text-neutral-400 font-body">
-                  <span className="text-primary-500 font-medium">{p.category}</span>
-                  <span>&middot;</span>
-                  <span>{p.readTime}</span>
-                </div>
-                <h3 className="mt-2 font-heading text-lg font-semibold text-neutral-900 group-hover:text-primary-500 transition-colors leading-snug line-clamp-2">
-                  {p.title}
-                </h3>
+              <div className="flex items-center gap-3 text-[11px] text-neutral-400 font-body uppercase tracking-wider mb-2">
+                <span>{p.category}</span>
+                <span className="w-4 h-px bg-neutral-300" />
+                <span>{p.readTime}</span>
               </div>
+              <h3 className="font-heading text-lg text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug line-clamp-2">
+                {p.title}
+              </h3>
             </Link>
           ))}
         </div>

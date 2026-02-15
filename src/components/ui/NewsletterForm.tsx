@@ -9,24 +9,6 @@ export function NewsletterForm({ variant = "dark" }: NewsletterFormProps) {
     e.preventDefault();
   };
 
-  if (variant === "dark") {
-    return (
-      <form className="flex w-full max-w-md gap-2" onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email của bạn..."
-          className="flex-1 rounded-md border border-neutral-700 bg-neutral-800 px-4 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-        />
-        <button
-          type="submit"
-          className="rounded-md bg-primary-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-600 transition-colors whitespace-nowrap"
-        >
-          Đăng ký
-        </button>
-      </form>
-    );
-  }
-
   return (
     <form
       className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto"
@@ -34,14 +16,22 @@ export function NewsletterForm({ variant = "dark" }: NewsletterFormProps) {
     >
       <input
         type="email"
-        placeholder="Email của bạn..."
-        className="flex-1 rounded-full px-5 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-secondary-400"
+        placeholder="Email của bạn"
+        className={`flex-1 border-b bg-transparent px-0 py-3 text-sm font-body focus:outline-none transition-colors ${
+          variant === "dark"
+            ? "border-neutral-300 text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-900"
+            : "border-white/40 text-white placeholder:text-white/60 focus:border-white"
+        }`}
       />
       <button
         type="submit"
-        className="rounded-full bg-secondary-500 px-6 py-3 text-sm font-semibold text-white hover:bg-secondary-600 transition-colors whitespace-nowrap"
+        className={`text-sm font-body font-medium tracking-wide uppercase transition-colors py-3 ${
+          variant === "dark"
+            ? "text-neutral-900 hover:text-secondary-600"
+            : "text-white hover:text-secondary-300"
+        }`}
       >
-        Đăng ký nhận tư vấn
+        Đăng ký
       </button>
     </form>
   );
