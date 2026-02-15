@@ -27,7 +27,7 @@ export default function ContactPage() {
         <div className="grid gap-16 lg:grid-cols-2">
           {/* Contact Form */}
           <div>
-            <h2 className="font-heading text-xl text-neutral-900 mb-8">
+            <h2 className="font-heading text-2xl text-neutral-900 mb-8">
               Gửi yêu cầu tư vấn
             </h2>
             <ContactForm />
@@ -35,7 +35,7 @@ export default function ContactPage() {
 
           {/* Contact Information */}
           <div className="lg:pl-12">
-            <h2 className="font-heading text-xl text-neutral-900 mb-8">
+            <h2 className="font-heading text-2xl text-neutral-900 mb-8">
               Thông tin
             </h2>
 
@@ -61,18 +61,18 @@ export default function ContactPage() {
                 },
               ].map((item) => (
                 <div key={item.label} className="border-b border-neutral-200 pb-6">
-                  <p className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body mb-2">
+                  <p className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body mb-2">
                     {item.label}
                   </p>
                   {item.href ? (
                     <a
                       href={item.href}
-                      className="text-sm text-neutral-900 font-body hover:text-secondary-600 transition-colors"
+                      className="text-base text-neutral-900 font-body hover:text-secondary-600 transition-colors"
                     >
                       {item.value}
                     </a>
                   ) : (
-                    <p className="text-sm text-neutral-900 font-body whitespace-pre-line">
+                    <p className="text-base text-neutral-900 font-body whitespace-pre-line">
                       {item.value}
                     </p>
                   )}

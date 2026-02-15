@@ -42,7 +42,7 @@ export default async function BlogPostPage({ params }: Props) {
       <article className="mx-auto max-w-2xl pb-16 lg:pb-24">
         {/* Header */}
         <div className="mb-12">
-          <div className="flex items-center gap-3 text-[11px] text-neutral-400 font-body uppercase tracking-wider mb-6">
+          <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-6">
             <span>{post.category}</span>
             <span className="w-4 h-px bg-neutral-300" />
             <span>{post.date}</span>
@@ -52,14 +52,14 @@ export default async function BlogPostPage({ params }: Props) {
           <h1 className="font-heading text-h1 text-neutral-900 leading-tight">
             {post.title}
           </h1>
-          <p className="mt-6 font-body text-lg text-neutral-500 leading-relaxed">
+          <p className="mt-6 font-body text-xl text-neutral-500 leading-relaxed">
             {post.excerpt}
           </p>
         </div>
 
         {/* Featured frame */}
         <div className="aspect-[2/1] bg-neutral-100 flex items-center justify-center mb-12">
-          <span className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body">
+          <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
             {post.category}
           </span>
         </div>
@@ -111,7 +111,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="mt-12 pt-8 border-t border-neutral-200">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-[13px] font-body text-neutral-500 hover:text-neutral-900 transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-body text-neutral-500 hover:text-neutral-900 transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Quay lại Blog
@@ -132,16 +132,16 @@ export default async function BlogPostPage({ params }: Props) {
               className="group block"
             >
               <div className="aspect-[3/2] bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150">
-                <span className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body">
+                <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
                   {p.category}
                 </span>
               </div>
-              <div className="flex items-center gap-3 text-[11px] text-neutral-400 font-body uppercase tracking-wider mb-2">
+              <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-2">
                 <span>{p.category}</span>
                 <span className="w-4 h-px bg-neutral-300" />
                 <span>{p.readTime}</span>
               </div>
-              <h3 className="font-heading text-lg text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug line-clamp-2">
+              <h3 className="font-heading text-xl text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug line-clamp-2">
                 {p.title}
               </h3>
             </Link>

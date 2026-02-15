@@ -38,7 +38,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
         <div className="flex h-full flex-col">
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-6">
-            <span className="font-heading text-xl text-neutral-900">
+            <span className="font-heading text-2xl text-neutral-900">
               The Fish
             </span>
             <button
@@ -60,7 +60,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
                 <Link
                   href={link.href}
                   onClick={onClose}
-                  className="block text-sm uppercase tracking-[0.12em] font-body text-neutral-900 hover:text-secondary-600 transition-colors"
+                  className="block text-base uppercase tracking-[0.12em] font-body text-neutral-900 hover:text-secondary-600 transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -71,7 +71,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
                         key={child.href}
                         href={child.href}
                         onClick={onClose}
-                        className="block text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+                        className="block text-base text-neutral-500 hover:text-neutral-900 transition-colors"
                       >
                         {child.label}
                       </Link>
@@ -83,7 +83,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
           </nav>
 
           {/* Contact Info */}
-          <div className="px-6 py-6 space-y-2 text-sm text-neutral-500 font-body">
+          <div className="px-6 py-6 space-y-2 text-base text-neutral-500 font-body">
             <p>hello@thefish.vn</p>
             <p>0901 234 567</p>
           </div>

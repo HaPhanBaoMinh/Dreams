@@ -71,19 +71,19 @@ export default function AccessoriesPage() {
               <div className="aspect-square bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150">
                 <div className="text-center">
                   <div className="w-10 h-px bg-neutral-300 mx-auto mb-3" />
-                  <span className="text-[10px] uppercase tracking-[0.15em] text-neutral-400 font-body">
+                  <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
                     {category.count}+ sản phẩm
                   </span>
                   <div className="w-10 h-px bg-neutral-300 mx-auto mt-3" />
                 </div>
               </div>
-              <h3 className="font-heading text-lg text-neutral-900 group-hover:text-secondary-600 transition-colors">
+              <h3 className="font-heading text-xl text-neutral-900 group-hover:text-secondary-600 transition-colors">
                 {category.title}
               </h3>
-              <p className="mt-2 text-sm text-neutral-500 font-body">
+              <p className="mt-2 text-base text-neutral-500 font-body">
                 {category.description}
               </p>
-              <span className="mt-3 inline-flex items-center gap-2 text-[13px] text-neutral-500 font-body group-hover:text-neutral-900 group-hover:gap-3 transition-all duration-300">
+              <span className="mt-3 inline-flex items-center gap-2 text-sm text-neutral-500 font-body group-hover:text-neutral-900 group-hover:gap-3 transition-all duration-300">
                 Xem chi tiết <ArrowRight className="h-3.5 w-3.5" />
               </span>
             </div>

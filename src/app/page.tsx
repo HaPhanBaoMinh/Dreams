@@ -16,7 +16,7 @@ export default function HomePage() {
       <section className="py-24 lg:py-40">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="font-body text-[11px] uppercase tracking-[0.2em] text-secondary-500 mb-6">
+            <p className="font-body text-xs uppercase tracking-[0.2em] text-secondary-500 mb-6">
               Dịch vụ cưới hỏi cao cấp
             </p>
             <h1 className="font-heading text-display text-neutral-900 leading-[1.05]">
@@ -24,7 +24,7 @@ export default function HomePage() {
               <br />
               trọn vẹn yêu thương
             </h1>
-            <p className="mt-8 font-body text-lg text-neutral-500 leading-relaxed max-w-xl mx-auto">
+            <p className="mt-8 font-body text-xl text-neutral-500 leading-relaxed max-w-xl mx-auto">
               Dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới cao cấp,
               nâng niu từng khoảnh khắc trong ngày trọng đại.
             </p>
@@ -50,7 +50,7 @@ export default function HomePage() {
           <div className="aspect-[16/7] bg-neutral-100 flex items-center justify-center">
             <div className="text-center">
               <div className="w-16 h-px bg-neutral-300 mx-auto mb-4" />
-              <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 font-body">
+              <p className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
                 The Fish — Since 2021
               </p>
               <div className="w-16 h-px bg-neutral-300 mx-auto mt-4" />
@@ -88,19 +88,19 @@ export default function HomePage() {
                 <div className="aspect-[4/5] bg-neutral-100 flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-neutral-150">
                   <div className="text-center px-8">
                     <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
-                    <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 font-body">
+                    <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
                       {category.title}
                     </span>
                     <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
                   </div>
                 </div>
-                <h3 className="font-heading text-xl text-neutral-900 group-hover:text-secondary-600 transition-colors">
+                <h3 className="font-heading text-2xl text-neutral-900 group-hover:text-secondary-600 transition-colors">
                   {category.title}
                 </h3>
-                <p className="mt-2 text-sm text-neutral-500 font-body">
+                <p className="mt-2 text-base text-neutral-500 font-body">
                   {category.description}
                 </p>
-                <span className="mt-3 inline-flex items-center gap-2 text-[13px] text-neutral-900 font-body group-hover:gap-3 transition-all duration-300">
+                <span className="mt-3 inline-flex items-center gap-2 text-sm text-neutral-900 font-body group-hover:gap-3 transition-all duration-300">
                   Khám phá <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </Link>
@@ -120,13 +120,13 @@ export default function HomePage() {
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step) => (
               <div key={step.step} className="text-center">
-                <span className="font-heading text-4xl text-neutral-300">
+                <span className="font-heading text-5xl text-neutral-300">
                   {String(step.step).padStart(2, "0")}
                 </span>
-                <h3 className="mt-4 font-heading text-lg text-neutral-900">
+                <h3 className="mt-4 font-heading text-xl text-neutral-900">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-sm text-neutral-500 font-body leading-relaxed">
+                <p className="mt-3 text-base text-neutral-500 font-body leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -146,7 +146,7 @@ export default function HomePage() {
             />
             <Link
               href="/ao-dai"
-              className="hidden sm:inline-flex items-center gap-2 text-[13px] font-body text-neutral-500 hover:text-neutral-900 transition-colors"
+              className="hidden sm:inline-flex items-center gap-2 text-sm font-body text-neutral-500 hover:text-neutral-900 transition-colors"
             >
               Xem tất cả <ArrowRight className="h-3.5 w-3.5" />
             </Link>
@@ -168,7 +168,7 @@ export default function HomePage() {
             <div className="aspect-[4/5] bg-white flex items-center justify-center">
               <div className="text-center">
                 <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
-                <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 font-body">
+                <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
                   Câu chuyện
                 </span>
                 <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
@@ -176,7 +176,7 @@ export default function HomePage() {
             </div>
 
             <div className="lg:pl-8">
-              <p className="text-[11px] uppercase tracking-[0.2em] text-secondary-500 font-body">
+              <p className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body">
                 Về The Fish
               </p>
               <h2 className="mt-4 font-heading text-h2 text-neutral-900">
@@ -218,14 +218,14 @@ export default function HomePage() {
                 key={testimonial.name}
                 className="p-8 border border-neutral-200"
               >
-                <p className="font-body text-sm text-neutral-600 leading-relaxed italic">
+                <p className="font-body text-base text-neutral-600 leading-relaxed italic">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <div className="mt-6 pt-6 border-t border-neutral-200">
-                  <p className="text-sm font-medium text-neutral-900 font-body">
+                  <p className="text-base font-medium text-neutral-900 font-body">
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-neutral-400 font-body mt-0.5">
+                  <p className="text-sm text-neutral-400 font-body mt-0.5">
                     {testimonial.location}
                   </p>
                 </div>
@@ -247,7 +247,7 @@ export default function HomePage() {
             />
             <Link
               href="/blog"
-              className="hidden sm:inline-flex items-center gap-2 text-[13px] font-body text-neutral-500 hover:text-neutral-900 transition-colors"
+              className="hidden sm:inline-flex items-center gap-2 text-sm font-body text-neutral-500 hover:text-neutral-900 transition-colors"
             >
               Xem tất cả <ArrowRight className="h-3.5 w-3.5" />
             </Link>
@@ -262,16 +262,16 @@ export default function HomePage() {
               >
                 {/* White frame placeholder */}
                 <div className="aspect-[3/2] bg-white flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-50">
-                  <span className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body">
+                  <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
                     {post.category}
                   </span>
                 </div>
-                <div className="flex items-center gap-3 text-[11px] text-neutral-400 font-body uppercase tracking-wider mb-2">
+                <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-2">
                   <span>{post.category}</span>
                   <span className="w-4 h-px bg-neutral-300" />
                   <span>{post.readTime}</span>
                 </div>
-                <h3 className="font-heading text-lg text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug">
+                <h3 className="font-heading text-xl text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug">
                   {post.title}
                 </h3>
               </Link>

@@ -35,12 +35,12 @@ export default function BlogPage() {
       >
         {/* White frame */}
         <div className="aspect-[3/2] bg-neutral-100 flex items-center justify-center transition-all duration-500 group-hover:bg-neutral-150">
-          <span className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body">
+          <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
             {featured.category}
           </span>
         </div>
         <div>
-          <div className="flex items-center gap-3 text-[11px] text-neutral-400 font-body uppercase tracking-wider mb-4">
+          <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-4">
             <span>{featured.category}</span>
             <span className="w-4 h-px bg-neutral-300" />
             <span>{featured.date}</span>
@@ -53,7 +53,7 @@ export default function BlogPage() {
           <p className="mt-4 font-body text-neutral-500 leading-relaxed">
             {featured.excerpt}
           </p>
-          <span className="mt-6 inline-flex items-center gap-2 text-[13px] font-body text-neutral-900 group-hover:gap-3 transition-all duration-300">
+          <span className="mt-6 inline-flex items-center gap-2 text-sm font-body text-neutral-900 group-hover:gap-3 transition-all duration-300">
             Đọc tiếp <ArrowRight className="h-3.5 w-3.5" />
           </span>
         </div>
@@ -69,19 +69,19 @@ export default function BlogPage() {
           >
             {/* White frame */}
             <div className="aspect-[3/2] bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150">
-              <span className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body">
+              <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
                 {post.category}
               </span>
             </div>
-            <div className="flex items-center gap-3 text-[11px] text-neutral-400 font-body uppercase tracking-wider mb-2">
+            <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-2">
               <span>{post.category}</span>
               <span className="w-4 h-px bg-neutral-300" />
               <span>{post.readTime}</span>
             </div>
-            <h3 className="font-heading text-lg text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug line-clamp-2">
+            <h3 className="font-heading text-xl text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug line-clamp-2">
               {post.title}
             </h3>
-            <p className="mt-2 text-sm text-neutral-500 font-body line-clamp-2">
+            <p className="mt-2 text-base text-neutral-500 font-body line-clamp-2">
               {post.excerpt}
             </p>
           </Link>

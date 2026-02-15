@@ -50,7 +50,7 @@ export default async function ProductDetailPage({ params }: Props) {
           <div className="aspect-[3/4] bg-neutral-100 flex items-center justify-center">
             <div className="text-center">
               <div className="w-12 h-px bg-neutral-300 mx-auto mb-3" />
-              <span className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body">
+              <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
                 {product.style}
               </span>
               <div className="w-12 h-px bg-neutral-300 mx-auto mt-3" />
@@ -62,7 +62,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 key={i}
                 className="aspect-square bg-neutral-100 flex items-center justify-center border border-transparent hover:border-neutral-900 transition-colors cursor-pointer"
               >
-                <span className="text-[9px] text-neutral-400 font-body">{i + 1}</span>
+                <span className="text-xs text-neutral-400 font-body">{i + 1}</span>
               </div>
             ))}
           </div>
@@ -84,29 +84,29 @@ export default async function ProductDetailPage({ params }: Props) {
 
           {/* Price */}
           <div className="mt-4 flex items-baseline gap-3">
-            <span className="text-xl font-body text-neutral-900">
+            <span className="text-2xl font-body text-neutral-900">
               {formatPrice(product.price)}
             </span>
-            <span className="text-sm text-neutral-400 font-body">/ ngày</span>
+            <span className="text-base text-neutral-400 font-body">/ ngày</span>
             {product.originalPrice && (
-              <span className="text-sm text-neutral-400 line-through font-body">
+              <span className="text-base text-neutral-400 line-through font-body">
                 {formatPrice(product.originalPrice)}
               </span>
             )}
           </div>
 
           {/* Description */}
-          <p className="mt-6 text-sm text-neutral-500 font-body leading-relaxed">
+          <p className="mt-6 text-base text-neutral-500 font-body leading-relaxed">
             {product.description}
           </p>
 
           {/* Size Selector */}
           <div className="mt-8">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-[11px] uppercase tracking-[0.12em] text-neutral-400 font-body">
+              <span className="text-xs uppercase tracking-[0.12em] text-neutral-400 font-body">
                 Size
               </span>
-              <button className="text-xs text-neutral-500 hover:text-neutral-900 font-body transition-colors">
+              <button className="text-sm text-neutral-500 hover:text-neutral-900 font-body transition-colors">
                 Hướng dẫn chọn size
               </button>
             </div>
@@ -114,7 +114,7 @@ export default async function ProductDetailPage({ params }: Props) {
               {product.sizes.map((size, i) => (
                 <button
                   key={size}
-                  className={`border px-6 py-3 text-sm font-body transition-colors ${
+                  className={`border px-6 py-3 text-base font-body transition-colors ${
                     i === 1
                       ? "border-neutral-900 text-neutral-900"
                       : "border-neutral-300 text-neutral-500 hover:border-neutral-900"
@@ -128,24 +128,24 @@ export default async function ProductDetailPage({ params }: Props) {
 
           {/* Date */}
           <div className="mt-8">
-            <span className="text-[11px] uppercase tracking-[0.12em] text-neutral-400 font-body mb-3 block">
+            <span className="text-xs uppercase tracking-[0.12em] text-neutral-400 font-body mb-3 block">
               Ngày thuê
             </span>
             <div className="flex items-center gap-3 border-b border-neutral-300 pb-3">
-              <span className="text-sm text-neutral-900 font-body">15/03/2026</span>
+              <span className="text-base text-neutral-900 font-body">15/03/2026</span>
               <span className="text-neutral-300">—</span>
-              <span className="text-sm text-neutral-900 font-body">17/03/2026</span>
-              <span className="ml-auto text-xs text-neutral-400 font-body">(3 ngày)</span>
+              <span className="text-base text-neutral-900 font-body">17/03/2026</span>
+              <span className="ml-auto text-sm text-neutral-400 font-body">(3 ngày)</span>
             </div>
           </div>
 
           {/* Price Summary */}
           <div className="mt-6 py-6 border-t border-b border-neutral-200 space-y-3">
-            <div className="flex justify-between text-sm font-body">
+            <div className="flex justify-between text-base font-body">
               <span className="text-neutral-500">Giá thuê (3 ngày)</span>
               <span className="text-neutral-900">{formatPrice(product.price * 3)}</span>
             </div>
-            <div className="flex justify-between text-sm font-body">
+            <div className="flex justify-between text-base font-body">
               <span className="text-neutral-500">Đặt cọc (50%)</span>
               <span className="text-neutral-900">{formatPrice(Math.round(product.price * 3 * 0.5))}</span>
             </div>
@@ -171,7 +171,7 @@ export default async function ProductDetailPage({ params }: Props) {
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-start gap-3">
                 <Icon className="h-4 w-4 text-neutral-400 mt-0.5 shrink-0" strokeWidth={1.5} />
-                <span className="text-xs text-neutral-500 font-body">{text}</span>
+                <span className="text-sm text-neutral-500 font-body">{text}</span>
               </div>
             ))}
           </div>
@@ -180,8 +180,8 @@ export default async function ProductDetailPage({ params }: Props) {
 
       {/* ═══ Details ═══ */}
       <div className="border-t border-neutral-200 py-16">
-        <h2 className="font-heading text-xl text-neutral-900 mb-8">Chi tiết</h2>
-        <div className="max-w-2xl font-body text-sm text-neutral-500 leading-relaxed">
+        <h2 className="font-heading text-2xl text-neutral-900 mb-8">Chi tiết</h2>
+        <div className="max-w-2xl font-body text-base text-neutral-500 leading-relaxed">
           <p>{product.details}</p>
           <div className="mt-8 space-y-3">
             {[

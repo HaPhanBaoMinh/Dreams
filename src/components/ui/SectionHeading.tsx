@@ -26,7 +26,7 @@ export function SectionHeading({
       </h2>
       {subtitle && (
         <p className={cn(
-          "mt-4 max-w-xl text-base text-neutral-500 font-body leading-relaxed",
+          "mt-4 max-w-xl text-lg text-neutral-500 font-body leading-relaxed",
           align === "center" && "mx-auto"
         )}>
           {subtitle}

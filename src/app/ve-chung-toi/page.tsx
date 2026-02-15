@@ -16,7 +16,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="py-24 lg:py-36 text-center">
         <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
-          <p className="text-[11px] uppercase tracking-[0.2em] text-secondary-500 font-body mb-6">
+          <p className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body mb-6">
             Về The Fish
           </p>
           <h1 className="font-heading text-h1 text-neutral-900">
@@ -31,7 +31,7 @@ export default function AboutPage() {
           <div className="aspect-[16/7] bg-neutral-100 flex items-center justify-center">
             <div className="text-center">
               <div className="w-16 h-px bg-neutral-300 mx-auto mb-4" />
-              <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 font-body">
+              <p className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
                 The Fish — Câu chuyện
               </p>
               <div className="w-16 h-px bg-neutral-300 mx-auto mt-4" />
@@ -43,10 +43,10 @@ export default function AboutPage() {
       {/* Letter */}
       <section className="py-24 lg:py-32 border-t border-neutral-200">
         <div className="mx-auto max-w-2xl px-6 sm:px-8 lg:px-12 text-center">
-          <p className="text-[11px] uppercase tracking-[0.2em] text-secondary-500 font-body mb-8">
+          <p className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body mb-8">
             Thư gửi bạn
           </p>
-          <div className="space-y-6 font-body text-neutral-500 leading-relaxed text-base">
+          <div className="space-y-6 font-body text-neutral-500 leading-relaxed text-lg">
             <p>
               The Fish ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
               Việt Nam — nơi mỗi chiếc áo dài, mỗi mâm quả đều mang trong
@@ -77,14 +77,14 @@ export default function AboutPage() {
             <div className="aspect-[4/5] bg-white flex items-center justify-center">
               <div className="text-center">
                 <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
-                <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 font-body">
+                <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
                   Sứ mệnh
                 </span>
                 <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
               </div>
             </div>
             <div className="lg:pl-8">
-              <p className="text-[11px] uppercase tracking-[0.2em] text-secondary-500 font-body">
+              <p className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body">
                 Sứ mệnh
               </p>
               <h2 className="mt-4 font-heading text-h2 text-neutral-900">
@@ -113,7 +113,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="grid gap-16 lg:grid-cols-2 items-center">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.2em] text-secondary-500 font-body">
+              <p className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body">
                 Giá trị cốt lõi
               </p>
               <h2 className="mt-4 font-heading text-h2 text-neutral-900">
@@ -137,10 +137,10 @@ export default function AboutPage() {
                   <div key={value.title} className="flex gap-5">
                     <div className="w-px bg-secondary-400 shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-body text-sm font-medium text-neutral-900">
+                      <h3 className="font-body text-base font-medium text-neutral-900">
                         {value.title}
                       </h3>
-                      <p className="mt-1.5 font-body text-sm text-neutral-500 leading-relaxed">
+                      <p className="mt-1.5 font-body text-base text-neutral-500 leading-relaxed">
                         {value.desc}
                       </p>
                     </div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
             <div className="aspect-[4/5] bg-neutral-100 flex items-center justify-center">
               <div className="text-center">
                 <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
-                <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 font-body">
+                <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
                   Giá trị
                 </span>
                 <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
@@ -168,10 +168,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="font-heading text-4xl text-white">
+                <p className="font-heading text-5xl text-white">
                   {stat.value}
                 </p>
-                <p className="mt-2 font-body text-sm text-neutral-500">
+                <p className="mt-2 font-body text-base text-neutral-500">
                   {stat.label}
                 </p>
               </div>
@@ -193,17 +193,17 @@ export default function AboutPage() {
               <div key={member.name} className="text-center">
                 {/* Avatar placeholder */}
                 <div className="mx-auto h-48 w-48 bg-neutral-100 rounded-full flex items-center justify-center">
-                  <span className="text-[11px] uppercase tracking-[0.15em] text-neutral-400 font-body">
+                  <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
                     Ảnh
                   </span>
                 </div>
-                <h3 className="mt-6 font-heading text-lg text-neutral-900">
+                <h3 className="mt-6 font-heading text-xl text-neutral-900">
                   {member.name}
                 </h3>
-                <p className="text-sm text-secondary-500 font-body mt-1">
+                <p className="text-base text-secondary-500 font-body mt-1">
                   {member.role}
                 </p>
-                <p className="mt-3 text-sm text-neutral-500 font-body max-w-xs mx-auto leading-relaxed">
+                <p className="mt-3 text-base text-neutral-500 font-body max-w-xs mx-auto leading-relaxed">
                   {member.bio}
                 </p>
               </div>
@@ -242,7 +242,7 @@ export default function AboutPage() {
 function SectionHeadingInline({ label, title }: { label: string; title: string }) {
   return (
     <div className="text-center">
-      <p className="text-[11px] uppercase tracking-[0.2em] text-secondary-500 font-body mb-4">
+      <p className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body mb-4">
         {label}
       </p>
       <h2 className="font-heading text-h2 text-neutral-900">{title}</h2>

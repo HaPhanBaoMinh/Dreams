@@ -17,7 +17,7 @@ function FilterSection({ title, children, defaultOpen = true }: FilterSectionPro
     <div className="border-b border-neutral-200 py-5 first:pt-0">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between text-[11px] uppercase tracking-[0.12em] text-neutral-400 font-body"
+        className="flex w-full items-center justify-between text-xs uppercase tracking-[0.12em] text-neutral-400 font-body"
       >
         {title}
         <ChevronDown
@@ -39,11 +39,11 @@ function Checkbox({ label, count }: { label: string; count?: number }) {
         type="checkbox"
         className="h-4 w-4 rounded-none border-neutral-300 text-neutral-900 focus:ring-neutral-900"
       />
-      <span className="text-sm text-neutral-600 group-hover:text-neutral-900 transition-colors font-body">
+      <span className="text-base text-neutral-600 group-hover:text-neutral-900 transition-colors font-body">
         {label}
       </span>
       {count !== undefined && (
-        <span className="ml-auto text-xs text-neutral-400 font-body">({count})</span>
+        <span className="ml-auto text-sm text-neutral-400 font-body">({count})</span>
       )}
     </label>
   );
@@ -57,7 +57,7 @@ function ColorDot({ color, label }: { color: string; label: string }) {
         className="h-5 w-5 border border-neutral-300 group-hover:border-neutral-900 transition-colors"
         style={{ backgroundColor: color }}
       />
-      <span className="text-sm text-neutral-600 font-body">{label}</span>
+      <span className="text-base text-neutral-600 font-body">{label}</span>
     </label>
   );
 }
@@ -65,7 +65,7 @@ function ColorDot({ color, label }: { color: string; label: string }) {
 export function CatalogFilters() {
   return (
     <div>
-      <h2 className="text-sm font-medium text-neutral-900 font-body mb-6">
+      <h2 className="text-base font-medium text-neutral-900 font-body mb-6">
         Bộ lọc
       </h2>
 
@@ -96,7 +96,7 @@ export function CatalogFilters() {
           {["S", "M", "L", "XL", "XXL"].map((size) => (
             <button
               key={size}
-              className="border border-neutral-300 px-4 py-2 text-xs font-body text-neutral-600 hover:border-neutral-900 hover:text-neutral-900 transition-colors"
+              className="border border-neutral-300 px-4 py-2 text-sm font-body text-neutral-600 hover:border-neutral-900 hover:text-neutral-900 transition-colors"
             >
               {size}
             </button>

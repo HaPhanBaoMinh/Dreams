@@ -34,11 +34,11 @@ export function Footer() {
           {/* Brand column */}
           <div>
             <Link href="/" className="inline-block">
-              <span className="font-heading text-2xl text-neutral-900">
+              <span className="font-heading text-3xl text-neutral-900">
                 The Fish
               </span>
             </Link>
-            <p className="mt-4 text-sm text-neutral-500 font-body leading-relaxed max-w-xs">
+            <p className="mt-4 text-base text-neutral-500 font-body leading-relaxed max-w-xs">
               Nâng niu trọn vẹn ngày trọng đại với dịch vụ cho thuê áo dài
               và bưng quả chuyên nghiệp.
             </p>
@@ -47,7 +47,7 @@ export function Footer() {
           {/* Link columns */}
           {Object.values(footerLinks).map((section) => (
             <div key={section.title}>
-              <h3 className="text-[11px] font-medium uppercase tracking-[0.15em] text-neutral-400 font-body">
+              <h3 className="text-xs font-medium uppercase tracking-[0.15em] text-neutral-400 font-body">
                 {section.title}
               </h3>
               <ul className="mt-5 space-y-3">
@@ -55,7 +55,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-300"
+                      className="text-base text-neutral-600 hover:text-neutral-900 transition-colors duration-300"
                     >
                       {link.label}
                     </Link>
@@ -69,7 +69,7 @@ export function Footer() {
 
       {/* Copyright */}
       <div className="border-t border-neutral-200 py-6">
-        <p className="text-center text-xs text-neutral-400 font-body tracking-wide">
+        <p className="text-center text-sm text-neutral-400 font-body tracking-wide">
           &copy; 2026 The Fish. All rights reserved.
         </p>
       </div>

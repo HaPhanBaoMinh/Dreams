@@ -17,7 +17,7 @@ export function NewsletterForm({ variant = "dark" }: NewsletterFormProps) {
       <input
         type="email"
         placeholder="Email của bạn"
-        className={`flex-1 border-b bg-transparent px-0 py-3 text-sm font-body focus:outline-none transition-colors ${
+        className={`flex-1 border-b bg-transparent px-0 py-3 text-base font-body focus:outline-none transition-colors ${
           variant === "dark"
             ? "border-neutral-300 text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-900"
             : "border-white/40 text-white placeholder:text-white/60 focus:border-white"
@@ -25,7 +25,7 @@ export function NewsletterForm({ variant = "dark" }: NewsletterFormProps) {
       />
       <button
         type="submit"
-        className={`text-sm font-body font-medium tracking-wide uppercase transition-colors py-3 ${
+        className={`text-base font-body font-medium tracking-wide uppercase transition-colors py-3 ${
           variant === "dark"
             ? "text-neutral-900 hover:text-secondary-600"
             : "text-white hover:text-secondary-300"

@@ -57,7 +57,7 @@ export function Header() {
                 <div key={link.href} className="relative group">
                   <Link
                     href={link.href}
-                    className="text-[13px] uppercase tracking-[0.12em] font-body text-neutral-500 hover:text-neutral-900 transition-colors duration-300"
+                    className="text-sm uppercase tracking-[0.12em] font-body text-neutral-500 hover:text-neutral-900 transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -68,7 +68,7 @@ export function Header() {
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block px-6 py-2.5 text-[13px] text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50 transition-colors"
+                            className="block px-6 py-2.5 text-sm text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50 transition-colors"
                           >
                             {child.label}
                           </Link>
@@ -82,7 +82,7 @@ export function Header() {
 
             {/* Logo — Center */}
             <Link href="/" className="flex items-center">
-              <span className="font-heading text-2xl sm:text-3xl tracking-tight text-neutral-900">
+              <span className="font-heading text-3xl sm:text-4xl tracking-tight text-neutral-900">
                 The Fish
               </span>
             </Link>
@@ -93,7 +93,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[13px] uppercase tracking-[0.12em] font-body text-neutral-500 hover:text-neutral-900 transition-colors duration-300"
+                  className="text-sm uppercase tracking-[0.12em] font-body text-neutral-500 hover:text-neutral-900 transition-colors duration-300"
                 >
                   {link.label}
                 </Link>

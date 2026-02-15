@@ -36,10 +36,10 @@ export default function AoDaiCatalogPage() {
           <div className="flex-1">
             {/* Toolbar */}
             <div className="flex items-center justify-between mb-8 pb-4 border-b border-neutral-200">
-              <p className="text-sm text-neutral-500 font-body">
+              <p className="text-base text-neutral-500 font-body">
                 <span className="text-neutral-900">{products.length}</span> sản phẩm
               </p>
-              <select className="border-b border-neutral-300 bg-transparent px-0 py-2 text-sm text-neutral-700 font-body focus:border-neutral-900 focus:outline-none">
+              <select className="border-b border-neutral-300 bg-transparent px-0 py-2 text-base text-neutral-700 font-body focus:border-neutral-900 focus:outline-none">
                 <option>Nổi bật</option>
                 <option>Giá: Thấp → Cao</option>
                 <option>Giá: Cao → Thấp</option>
