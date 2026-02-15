@@ -10,7 +10,7 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/ao-dai/${product.slug}`} className="group block">
-      <Card className="bg-transparent">
+      <Card className="bg-transparent hover-lift">
         <CardImage>
           {/* White frame placeholder */}
           <div className="absolute inset-0 bg-neutral-100 flex items-center justify-center">

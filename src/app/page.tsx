@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 import { ProductCard } from "@/components/product/ProductCard";
+import { FadeIn, Stagger } from "@/components/animation/FadeIn";
+import { Parallax } from "@/components/animation/Parallax";
 import { products, processSteps, testimonials, blogPosts } from "@/lib/data";
 
 export default function HomePage() {
@@ -16,30 +18,38 @@ export default function HomePage() {
       <section className="py-24 lg:py-40">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="font-body text-xs uppercase tracking-[0.2em] text-secondary-500 mb-6">
-              Dịch vụ cưới hỏi cao cấp
-            </p>
-            <h1 className="font-heading text-display text-neutral-900 leading-[1.05]">
-              Trọn vẹn lễ nghĩa,
-              <br />
-              trọn vẹn yêu thương
-            </h1>
-            <p className="mt-8 font-body text-xl text-neutral-500 leading-relaxed max-w-xl mx-auto">
-              Dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới cao cấp,
-              nâng niu từng khoảnh khắc trong ngày trọng đại.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4 justify-center">
-              <Link href="/lien-he">
-                <Button size="lg">
-                  Đặt lịch tư vấn
-                </Button>
-              </Link>
-              <Link href="/ao-dai">
-                <Button variant="outline" size="lg">
-                  Khám phá áo dài
-                </Button>
-              </Link>
-            </div>
+            <FadeIn delay={100} direction="none" duration={1000}>
+              <p className="font-body text-xs uppercase tracking-[0.2em] text-secondary-500 mb-6">
+                Dịch vụ cưới hỏi cao cấp
+              </p>
+            </FadeIn>
+            <FadeIn delay={250} duration={1000} distance={40}>
+              <h1 className="font-heading text-display text-neutral-900 leading-[1.05]">
+                Trọn vẹn lễ nghĩa,
+                <br />
+                trọn vẹn yêu thương
+              </h1>
+            </FadeIn>
+            <FadeIn delay={450} duration={900}>
+              <p className="mt-8 font-body text-xl text-neutral-500 leading-relaxed max-w-xl mx-auto">
+                Dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới cao cấp,
+                nâng niu từng khoảnh khắc trong ngày trọng đại.
+              </p>
+            </FadeIn>
+            <FadeIn delay={600} duration={900}>
+              <div className="mt-10 flex flex-wrap gap-4 justify-center">
+                <Link href="/lien-he">
+                  <Button size="lg">
+                    Đặt lịch tư vấn
+                  </Button>
+                </Link>
+                <Link href="/ao-dai">
+                  <Button variant="outline" size="lg">
+                    Khám phá áo dài
+                  </Button>
+                </Link>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -47,27 +57,33 @@ export default function HomePage() {
       {/* ═══ EDITORIAL IMAGE FRAME ═══ */}
       <section className="pb-24 lg:pb-32">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="aspect-[16/7] bg-neutral-100 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-16 h-px bg-neutral-300 mx-auto mb-4" />
-              <p className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
-                The Fish — Since 2021
-              </p>
-              <div className="w-16 h-px bg-neutral-300 mx-auto mt-4" />
-            </div>
-          </div>
+          <Parallax speed={0.06}>
+            <FadeIn duration={1200}>
+              <div className="aspect-[16/7] bg-neutral-100 flex items-center justify-center hover-scale">
+                <div className="text-center">
+                  <div className="w-16 h-px bg-neutral-300 mx-auto mb-4" />
+                  <p className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
+                    The Fish — Since 2021
+                  </p>
+                  <div className="w-16 h-px bg-neutral-300 mx-auto mt-4" />
+                </div>
+              </div>
+            </FadeIn>
+          </Parallax>
         </div>
       </section>
 
       {/* ═══ PRODUCT CATEGORIES ═══ */}
       <section className="py-24 lg:py-32 border-t border-neutral-200">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <SectionHeading
-            title="Sản Phẩm"
-            subtitle="Áo dài cao cấp và phụ kiện đồng bộ cho ngày cưới hỏi trọn vẹn."
-          />
+          <FadeIn>
+            <SectionHeading
+              title="Sản Phẩm"
+              subtitle="Áo dài cao cấp và phụ kiện đồng bộ cho ngày cưới hỏi trọn vẹn."
+            />
+          </FadeIn>
 
-          <div className="grid gap-8 sm:grid-cols-2">
+          <Stagger className="grid gap-8 sm:grid-cols-2" stagger={150}>
             {[
               {
                 title: "Áo Dài",
@@ -85,7 +101,7 @@ export default function HomePage() {
                 href={category.href}
                 className="group block"
               >
-                <div className="aspect-[4/5] bg-neutral-100 flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-neutral-150">
+                <div className="aspect-[4/5] bg-neutral-100 flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-neutral-150 hover-scale">
                   <div className="text-center px-8">
                     <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
                     <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
@@ -100,24 +116,26 @@ export default function HomePage() {
                 <p className="mt-2 text-base text-neutral-500 font-body">
                   {category.description}
                 </p>
-                <span className="mt-3 inline-flex items-center gap-2 text-sm text-neutral-900 font-body group-hover:gap-3 transition-all duration-300">
+                <span className="mt-3 inline-flex items-center gap-2 text-sm text-neutral-900 font-body arrow-slide">
                   Khám phá <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </Link>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* ═══ HOW IT WORKS ═══ */}
       <section className="py-24 lg:py-32 border-t border-neutral-200 bg-neutral-100">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <SectionHeading
-            title="Quy Trình"
-            subtitle="Bốn bước đơn giản để có ngày trọng đại hoàn hảo."
-          />
+          <FadeIn>
+            <SectionHeading
+              title="Quy Trình"
+              subtitle="Bốn bước đơn giản để có ngày trọng đại hoàn hảo."
+            />
+          </FadeIn>
 
-          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <Stagger className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4" stagger={120}>
             {processSteps.map((step) => (
               <div key={step.step} className="text-center">
                 <span className="font-heading text-5xl text-neutral-300">
@@ -131,32 +149,34 @@ export default function HomePage() {
                 </p>
               </div>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* ═══ FEATURED PRODUCTS ═══ */}
       <section className="py-24 lg:py-32 border-t border-neutral-200">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="flex items-end justify-between mb-16">
-            <SectionHeading
-              title="Áo Dài Nổi Bật"
-              align="left"
-              className="mb-0"
-            />
-            <Link
-              href="/ao-dai"
-              className="hidden sm:inline-flex items-center gap-2 text-sm font-body text-neutral-500 hover:text-neutral-900 transition-colors"
-            >
-              Xem tất cả <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
+          <FadeIn>
+            <div className="flex items-end justify-between mb-16">
+              <SectionHeading
+                title="Áo Dài Nổi Bật"
+                align="left"
+                className="mb-0"
+              />
+              <Link
+                href="/ao-dai"
+                className="hidden sm:inline-flex items-center gap-2 text-sm font-body text-neutral-500 hover:text-neutral-900 transition-colors arrow-slide"
+              >
+                Xem tất cả <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
+          <Stagger className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4" stagger={100}>
             {featuredProducts.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -164,42 +184,47 @@ export default function HomePage() {
       <section className="py-24 lg:py-32 border-t border-neutral-200 bg-neutral-100">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="grid gap-16 lg:grid-cols-2 items-center">
-            {/* White frame placeholder */}
-            <div className="aspect-[4/5] bg-white flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
-                <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
-                  Câu chuyện
-                </span>
-                <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
-              </div>
-            </div>
+            <Parallax speed={0.05}>
+              <FadeIn direction="left" distance={40} duration={1000}>
+                <div className="aspect-[4/5] bg-white flex items-center justify-center hover-scale">
+                  <div className="text-center">
+                    <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
+                    <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
+                      Câu chuyện
+                    </span>
+                    <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
+                  </div>
+                </div>
+              </FadeIn>
+            </Parallax>
 
-            <div className="lg:pl-8">
-              <p className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body">
-                Về The Fish
-              </p>
-              <h2 className="mt-4 font-heading text-h2 text-neutral-900">
-                Nơi truyền thống
-                <br />gặp gỡ yêu thương
-              </h2>
-              <div className="mt-8 space-y-5 font-body text-neutral-500 leading-relaxed">
-                <p>
-                  The Fish ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
-                  Việt Nam — nơi mỗi chiếc áo dài, mỗi mâm quả đều mang trong
-                  mình câu chuyện về tình yêu và lời hứa gắn kết.
+            <FadeIn direction="right" distance={40} duration={1000} delay={200}>
+              <div className="lg:pl-8">
+                <p className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body">
+                  Về The Fish
                 </p>
-                <p>
-                  Chúng tôi tin rằng ngày cưới không chỉ là sự kiện — đó là di
-                  sản văn hóa được truyền từ thế hệ này sang thế hệ khác.
-                </p>
+                <h2 className="mt-4 font-heading text-h2 text-neutral-900">
+                  Nơi truyền thống
+                  <br />gặp gỡ yêu thương
+                </h2>
+                <div className="mt-8 space-y-5 font-body text-neutral-500 leading-relaxed">
+                  <p>
+                    The Fish ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
+                    Việt Nam — nơi mỗi chiếc áo dài, mỗi mâm quả đều mang trong
+                    mình câu chuyện về tình yêu và lời hứa gắn kết.
+                  </p>
+                  <p>
+                    Chúng tôi tin rằng ngày cưới không chỉ là sự kiện — đó là di
+                    sản văn hóa được truyền từ thế hệ này sang thế hệ khác.
+                  </p>
+                </div>
+                <Link href="/ve-chung-toi" className="mt-8 inline-block">
+                  <Button variant="outline">
+                    Đọc thêm <ArrowRight className="h-3.5 w-3.5" />
+                  </Button>
+                </Link>
               </div>
-              <Link href="/ve-chung-toi" className="mt-8 inline-block">
-                <Button variant="outline">
-                  Đọc thêm <ArrowRight className="h-3.5 w-3.5" />
-                </Button>
-              </Link>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -207,16 +232,18 @@ export default function HomePage() {
       {/* ═══ TESTIMONIALS ═══ */}
       <section className="py-24 lg:py-32 border-t border-neutral-200">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <SectionHeading
-            title="Khách Hàng Nói Gì"
-            subtitle="Niềm vui của khách hàng là động lực lớn nhất của chúng tôi."
-          />
+          <FadeIn>
+            <SectionHeading
+              title="Khách Hàng Nói Gì"
+              subtitle="Niềm vui của khách hàng là động lực lớn nhất của chúng tôi."
+            />
+          </FadeIn>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <Stagger className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" stagger={120}>
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.name}
-                className="p-8 border border-neutral-200"
+                className="p-8 border border-neutral-200 hover-lift"
               >
                 <p className="font-body text-base text-neutral-600 leading-relaxed italic">
                   &ldquo;{testimonial.quote}&rdquo;
@@ -231,37 +258,38 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* ═══ BLOG ═══ */}
       <section className="py-24 lg:py-32 border-t border-neutral-200 bg-neutral-100">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="flex items-end justify-between mb-16">
-            <SectionHeading
-              title="Blog"
-              subtitle="Kiến thức về cưới hỏi, áo dài và văn hóa truyền thống."
-              align="left"
-              className="mb-0"
-            />
-            <Link
-              href="/blog"
-              className="hidden sm:inline-flex items-center gap-2 text-sm font-body text-neutral-500 hover:text-neutral-900 transition-colors"
-            >
-              Xem tất cả <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
+          <FadeIn>
+            <div className="flex items-end justify-between mb-16">
+              <SectionHeading
+                title="Blog"
+                subtitle="Kiến thức về cưới hỏi, áo dài và văn hóa truyền thống."
+                align="left"
+                className="mb-0"
+              />
+              <Link
+                href="/blog"
+                className="hidden sm:inline-flex items-center gap-2 text-sm font-body text-neutral-500 hover:text-neutral-900 transition-colors arrow-slide"
+              >
+                Xem tất cả <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+          </FadeIn>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <Stagger className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" stagger={120}>
             {featuredPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
                 className="group block"
               >
-                {/* White frame placeholder */}
-                <div className="aspect-[3/2] bg-white flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-50">
+                <div className="aspect-[3/2] bg-white flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-50 hover-scale">
                   <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
                     {post.category}
                   </span>
@@ -276,23 +304,25 @@ export default function HomePage() {
                 </h3>
               </Link>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* ═══ CTA ═══ */}
       <section className="py-24 lg:py-32 border-t border-neutral-200">
         <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12 text-center">
-          <h2 className="font-heading text-h2 text-neutral-900">
-            Nhận tư vấn miễn phí
-          </h2>
-          <p className="mt-4 font-body text-neutral-500 max-w-md mx-auto leading-relaxed">
-            Để lại email, chúng tôi sẽ liên hệ tư vấn gói dịch vụ phù hợp
-            nhất cho ngày trọng đại của bạn.
-          </p>
-          <div className="mt-10">
-            <NewsletterForm variant="dark" />
-          </div>
+          <FadeIn duration={1000}>
+            <h2 className="font-heading text-h2 text-neutral-900">
+              Nhận tư vấn miễn phí
+            </h2>
+            <p className="mt-4 font-body text-neutral-500 max-w-md mx-auto leading-relaxed">
+              Để lại email, chúng tôi sẽ liên hệ tư vấn gói dịch vụ phù hợp
+              nhất cho ngày trọng đại của bạn.
+            </p>
+            <div className="mt-10">
+              <NewsletterForm variant="dark" />
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>

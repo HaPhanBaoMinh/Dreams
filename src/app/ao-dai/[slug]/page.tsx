@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/Badge";
 import { ProductCard } from "@/components/product/ProductCard";
 import { products } from "@/lib/data";
 import { formatPrice } from "@/lib/utils";
+import { FadeIn, Stagger } from "@/components/animation/FadeIn";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -46,6 +47,7 @@ export default async function ProductDetailPage({ params }: Props) {
       {/* ═══ Product Main ═══ */}
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 pb-16">
         {/* Image Gallery — White frames */}
+        <FadeIn direction="left" distance={30} duration={900}>
         <div className="space-y-3">
           <div className="aspect-[3/4] bg-neutral-100 flex items-center justify-center">
             <div className="text-center">
@@ -67,8 +69,10 @@ export default async function ProductDetailPage({ params }: Props) {
             ))}
           </div>
         </div>
+        </FadeIn>
 
         {/* Product Info */}
+        <FadeIn direction="right" distance={30} duration={900} delay={200}>
         <div className="lg:py-4">
           {/* Badges */}
           <div className="flex flex-wrap gap-2 mb-4">
@@ -176,6 +180,7 @@ export default async function ProductDetailPage({ params }: Props) {
             ))}
           </div>
         </div>
+        </FadeIn>
       </div>
 
       {/* ═══ Details ═══ */}
@@ -201,14 +206,16 @@ export default async function ProductDetailPage({ params }: Props) {
 
       {/* ═══ Related Products ═══ */}
       <div className="border-t border-neutral-200 py-16 lg:py-20">
-        <h2 className="font-heading text-h2 text-neutral-900 mb-12">
-          Có Thể Bạn Cũng Thích
-        </h2>
-        <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
+        <FadeIn>
+          <h2 className="font-heading text-h2 text-neutral-900 mb-12">
+            Có Thể Bạn Cũng Thích
+          </h2>
+        </FadeIn>
+        <Stagger className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4" stagger={100}>
           {related.map((p) => (
             <ProductCard key={p.slug} product={p} />
           ))}
-        </div>
+        </Stagger>
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
+import { FadeIn, Stagger } from "@/components/animation/FadeIn";
 import { blogPosts } from "@/lib/data";
 
 interface Props {
@@ -41,71 +42,77 @@ export default async function BlogPostPage({ params }: Props) {
 
       <article className="mx-auto max-w-2xl pb-16 lg:pb-24">
         {/* Header */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-6">
-            <span>{post.category}</span>
-            <span className="w-4 h-px bg-neutral-300" />
-            <span>{post.date}</span>
-            <span className="w-4 h-px bg-neutral-300" />
-            <span>{post.readTime}</span>
+        <FadeIn duration={900}>
+          <div className="mb-12">
+            <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-6">
+              <span>{post.category}</span>
+              <span className="w-4 h-px bg-neutral-300" />
+              <span>{post.date}</span>
+              <span className="w-4 h-px bg-neutral-300" />
+              <span>{post.readTime}</span>
+            </div>
+            <h1 className="font-heading text-h1 text-neutral-900 leading-tight">
+              {post.title}
+            </h1>
+            <p className="mt-6 font-body text-xl text-neutral-500 leading-relaxed">
+              {post.excerpt}
+            </p>
           </div>
-          <h1 className="font-heading text-h1 text-neutral-900 leading-tight">
-            {post.title}
-          </h1>
-          <p className="mt-6 font-body text-xl text-neutral-500 leading-relaxed">
-            {post.excerpt}
-          </p>
-        </div>
+        </FadeIn>
 
         {/* Featured frame */}
-        <div className="aspect-[2/1] bg-neutral-100 flex items-center justify-center mb-12">
-          <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
-            {post.category}
-          </span>
-        </div>
+        <FadeIn delay={200} duration={1000}>
+          <div className="aspect-[2/1] bg-neutral-100 flex items-center justify-center mb-12 hover-scale">
+            <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
+              {post.category}
+            </span>
+          </div>
+        </FadeIn>
 
         {/* Article Body */}
-        <div className="prose prose-neutral max-w-none font-body prose-headings:font-heading prose-headings:font-normal prose-headings:tracking-tight prose-a:text-neutral-900 prose-a:underline-offset-4">
-          <p>
-            Trong văn hóa cưới hỏi Việt Nam, mỗi nghi lễ đều mang trong mình
-            những ý nghĩa sâu sắc về tình yêu, lòng hiếu thảo và sự kết nối
-            giữa hai gia đình.
-          </p>
+        <FadeIn delay={300} duration={900}>
+          <div className="prose prose-neutral max-w-none font-body prose-headings:font-heading prose-headings:font-normal prose-headings:tracking-tight prose-a:text-neutral-900 prose-a:underline-offset-4">
+            <p>
+              Trong văn hóa cưới hỏi Việt Nam, mỗi nghi lễ đều mang trong mình
+              những ý nghĩa sâu sắc về tình yêu, lòng hiếu thảo và sự kết nối
+              giữa hai gia đình.
+            </p>
 
-          <h2>Ý Nghĩa Của Truyền Thống</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris.
-          </p>
-          <p>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.
-          </p>
+            <h2>Ý Nghĩa Của Truyền Thống</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris.
+            </p>
+            <p>
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </p>
 
-          <h2>Những Điều Cần Lưu Ý</h2>
-          <p>
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-            aut fugit, sed quia consequuntur magni dolores eos.
-          </p>
-          <ul>
-            <li>
-              Chọn số mâm quả phù hợp với phong tục vùng miền.
-            </li>
-            <li>
-              Áo dài cho đội bê tráp nên đồng bộ về màu sắc.
-            </li>
-            <li>
-              Chuẩn bị tối thiểu 2-3 tháng trước ngày lễ.
-            </li>
-          </ul>
+            <h2>Những Điều Cần Lưu Ý</h2>
+            <p>
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+              aut fugit, sed quia consequuntur magni dolores eos.
+            </p>
+            <ul>
+              <li>
+                Chọn số mâm quả phù hợp với phong tục vùng miền.
+              </li>
+              <li>
+                Áo dài cho đội bê tráp nên đồng bộ về màu sắc.
+              </li>
+              <li>
+                Chuẩn bị tối thiểu 2-3 tháng trước ngày lễ.
+              </li>
+            </ul>
 
-          <h2>Lời Kết</h2>
-          <p>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti.
-          </p>
-        </div>
+            <h2>Lời Kết</h2>
+            <p>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium voluptatum deleniti atque corrupti.
+            </p>
+          </div>
+        </FadeIn>
 
         {/* Back link */}
         <div className="mt-12 pt-8 border-t border-neutral-200">
@@ -121,17 +128,19 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* Related Posts */}
       <div className="border-t border-neutral-200 py-16 lg:py-20">
-        <h2 className="font-heading text-h2 text-neutral-900 mb-12">
-          Bài Viết Liên Quan
-        </h2>
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <FadeIn>
+          <h2 className="font-heading text-h2 text-neutral-900 mb-12">
+            Bài Viết Liên Quan
+          </h2>
+        </FadeIn>
+        <Stagger className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3" stagger={120}>
           {related.map((p) => (
             <Link
               key={p.slug}
               href={`/blog/${p.slug}`}
               className="group block"
             >
-              <div className="aspect-[3/2] bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150">
+              <div className="aspect-[3/2] bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150 hover-scale">
                 <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
                   {p.category}
                 </span>
@@ -146,7 +155,7 @@ export default async function BlogPostPage({ params }: Props) {
               </h3>
             </Link>
           ))}
-        </div>
+        </Stagger>
       </div>
     </div>
   );

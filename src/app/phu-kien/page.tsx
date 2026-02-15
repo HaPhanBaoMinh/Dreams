@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
+import { FadeIn, Stagger } from "@/components/animation/FadeIn";
 
 export const metadata: Metadata = {
   title: "Phụ Kiện Cưới — Mấn, Trang Sức, Giày & Khăn Vấn",
@@ -51,24 +51,25 @@ export default function AccessoriesPage() {
 
       {/* Hero */}
       <div className="text-center mb-16 lg:mb-20">
-        <h1 className="font-heading text-h1 text-neutral-900">
-          Phụ Kiện
-        </h1>
-        <p className="mt-4 font-body text-neutral-500 max-w-lg mx-auto">
-          Hoàn thiện diện mạo ngày cưới với phụ kiện đồng bộ cùng áo dài.
-        </p>
+        <FadeIn delay={100} duration={1000} distance={40}>
+          <h1 className="font-heading text-h1 text-neutral-900">
+            Phụ Kiện
+          </h1>
+          <p className="mt-4 font-body text-neutral-500 max-w-lg mx-auto">
+            Hoàn thiện diện mạo ngày cưới với phụ kiện đồng bộ cùng áo dài.
+          </p>
+        </FadeIn>
       </div>
 
       <div className="pb-24 lg:pb-32">
         {/* Category Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <Stagger className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" stagger={100}>
           {accessoryCategories.map((category) => (
             <div
               key={category.title}
               className="group cursor-pointer"
             >
-              {/* White frame */}
-              <div className="aspect-square bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150">
+              <div className="aspect-square bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150 hover-scale">
                 <div className="text-center">
                   <div className="w-10 h-px bg-neutral-300 mx-auto mb-3" />
                   <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
@@ -83,30 +84,32 @@ export default function AccessoriesPage() {
               <p className="mt-2 text-base text-neutral-500 font-body">
                 {category.description}
               </p>
-              <span className="mt-3 inline-flex items-center gap-2 text-sm text-neutral-500 font-body group-hover:text-neutral-900 group-hover:gap-3 transition-all duration-300">
+              <span className="mt-3 inline-flex items-center gap-2 text-sm text-neutral-500 font-body group-hover:text-neutral-900 arrow-slide">
                 Xem chi tiết <ArrowRight className="h-3.5 w-3.5" />
               </span>
             </div>
           ))}
-        </div>
+        </Stagger>
 
         {/* CTA */}
-        <div className="mt-24 text-center py-16 border-t border-neutral-200">
-          <h2 className="font-heading text-h3 text-neutral-900">
-            Cần tư vấn phối phụ kiện?
-          </h2>
-          <p className="mt-4 font-body text-neutral-500 max-w-md mx-auto">
-            Đội ngũ The Fish sẵn sàng hỗ trợ bạn phối hợp phụ kiện
-            đồng bộ với áo dài.
-          </p>
-          <div className="mt-8">
-            <Link href="/lien-he">
-              <Button size="lg">
-                Liên hệ tư vấn
-              </Button>
-            </Link>
+        <FadeIn duration={1000}>
+          <div className="mt-24 text-center py-16 border-t border-neutral-200">
+            <h2 className="font-heading text-h3 text-neutral-900">
+              Cần tư vấn phối phụ kiện?
+            </h2>
+            <p className="mt-4 font-body text-neutral-500 max-w-md mx-auto">
+              Đội ngũ The Fish sẵn sàng hỗ trợ bạn phối hợp phụ kiện
+              đồng bộ với áo dài.
+            </p>
+            <div className="mt-8">
+              <Link href="/lien-he">
+                <Button size="lg">
+                  Liên hệ tư vấn
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </div>
   );
