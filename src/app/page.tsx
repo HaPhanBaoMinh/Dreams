@@ -17,7 +17,7 @@ export default function HomePage() {
       {/* ═══ HERO ═══ */}
       <section className="py-24 lg:py-40">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <FadeIn delay={100} direction="none" duration={1000}>
               <p className="font-body text-xs uppercase tracking-[0.2em] text-secondary-500 mb-6">
                 Dịch vụ cưới hỏi cao cấp

@@ -41,7 +41,7 @@ export function Header() {
         )}
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="flex h-20 items-center justify-between lg:h-24">
+          <div className="flex h-20 items-center justify-between lg:h-20">
             {/* Mobile menu button */}
             <button
               className="lg:hidden text-neutral-700 hover:text-neutral-900 transition-colors"
